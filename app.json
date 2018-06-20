@@ -1,0 +1,53 @@
+{
+  "pages":[
+    "pages/main/main",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/main/bozhu/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "list":[
+      {
+        "pagePath": "pages/main/main",
+        "text": "播主",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_light.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "话题",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_light.png"
+      },{
+        "pagePath": "pages/main/main",
+        "text": "音乐",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_light.png"
+      },
+      {
+        "pagePath": "pages/main/main",
+        "text": "视频",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_light.png"
+      },
+      {
+        "pagePath": "pages/main/main",
+        "text": "我们不一样",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_light.png"
+      }
+    ],
+    "selectedColor":"#ff0000"
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

@@ -1,0 +1,8 @@
+<view>
+  <view>{{dataCon.game.name}}</view>
+  <view>
+    {{dataCon.game.sys_limit}}
+  </view>
+  <image src='{{dataCon.game.images[0]}}' bindtap='copyPath' data-path='{{dataCon.game.images[0]}}'></image>
+  <video src="{{testVideo}}" controls ></video>
+</view>
