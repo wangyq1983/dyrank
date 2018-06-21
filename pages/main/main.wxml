@@ -27,7 +27,7 @@
   </scroll-view>
 
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 2}}">
-    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1'>
+    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='testChart'>
       <text>{{index+1}}</text>
       <text>{{item.game_info.name}}</text>
     </view>

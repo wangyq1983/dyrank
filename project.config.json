@@ -11,6 +11,8 @@
 	"libVersion": "1.9.94",
 	"appid": "wxcb5482e48acc4b63",
 	"projectname": "WX.DouYin",
+	"appid": "wxfaf04dcf1c40c9c0",
+	"projectname": "dyrank",
 	"condition": {
 		"search": {
 			"current": -1,
