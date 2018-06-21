@@ -1,0 +1,47 @@
+/* pages/shipin/shipin.wxss */
+.scrollStyle{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #1E2033;
+}
+ .listStyle2{
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 33.333333333%;  
+  height: 360rpx;
+  background-image: url(https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=e9449e382d9759ee4a5067cd8ac0242b/94cad1c8a786c9179e80a80cc23d70cf3bc75700.jpg);
+} 
+.listNum{
+  background-color: red;
+  min-width: 50rpx;
+  min-height: 50rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  padding: 5rpx;
+}
+.listTV{
+  background-color: black;
+  font-size: 24rpx;
+  padding: 10rpx;
+  color: #fff; 
+  width: 100%; 
+  align-self: flex-end;
+  opacity: .5;
+}
+.listEnd{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  color: #fff;
+  margin: 100rpx 0;
+}

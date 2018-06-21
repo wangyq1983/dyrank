@@ -26,7 +26,8 @@
   left:0;
   right:0;
   z-index: 9;
-  background: #fff;
+  background: #1E2033;
+  color: #8386BE;
 }
 .sub_menu_item{
   display: flex;
@@ -36,15 +37,16 @@
   padding:0 10px;
 }
 .sub_menu_item.cur{
-  border-bottom: 3px solid #f00;
+  color: #fff;
+  border-bottom: 3px solid #00DDDC;
 }
 .scrollStyle{
-  margin-top: 46px;
+  padding-top: 46px;
 }
 .listStyle1{
-  height:40px;
+  height:50px;
 }
-.listStyle1:nth-child(1){
+/* .listStyle1:nth-child(1){
   background: #f00;
 }
 .listStyle1:nth-child(2){
@@ -52,7 +54,7 @@
 }
 .listStyle1:nth-child(3){
   background: #ff0;
-}
+} */
 .listContainer{
   margin-top:0;
 }

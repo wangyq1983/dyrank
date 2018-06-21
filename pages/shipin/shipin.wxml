@@ -1,0 +1,37 @@
+<view>
+   <view class='sub_menu_box'>
+    <view class='sub_menu_item {{sub_menu_cur==0?"cur":""}}' data-id='0' bindtap='menuFunc'>点赞</view>
+    <view class='sub_menu_item {{sub_menu_cur==1?"cur":""}}' data-id='1' bindtap='menuFunc'>评论</view>
+    <view class='sub_menu_item {{sub_menu_cur==2?"cur":""}}' data-id='2' bindtap='menuFunc'>飙升</view>
+  </view> 
+
+  <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 0}}">
+    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle2' bindtap='gotoZozhuDetail' data-id="{{item.cid}}">
+      <text class='listNum'>{{index+1}}</text>
+      <text class='listTV'>2200w评论</text>         
+    </view>
+    <view wx:if="{{isEnd == true}}" class='listEnd'> 
+      已经到底了
+    </view>
+  </scroll-view>
+
+  <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 1}}">
+    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle2' bindtap='gotoZozhuDetail' data-id='{{item.gid}}'>
+      <text class='listNum'>{{index+1}}</text>
+      <text class='listTV'>2200w视频</text>      
+    </view>
+    <view wx:if="{{isEnd == true}}" class='listEnd'> 
+      已经到底了
+    </view>
+  </scroll-view>
+
+  <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 2}}">
+    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle2' bindtap='gotoZozhuDetail' data-id='{{item.gid}}'>
+      <text class='listNum'>{{index+1}}</text>
+      <text class='listTV'>2200w视频</text>      
+    </view>
+    <view wx:if="{{isEnd == true}}" class='listEnd'> 
+      已经到底了
+    </view>
+  </scroll-view>
+</view>

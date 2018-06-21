@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -9,8 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.94",
-	"appid": "touristappid",
-	"projectname": "testDemo",
+	"appid": "wxcb5482e48acc4b63",
+	"projectname": "WX.DouYin",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -20,13 +20,36 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "话题",
+					"pathName": "pages/huati/huati",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "音乐",
+					"pathName": "pages/yinyue/yinyue",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "视频",
+					"pathName": "pages/shipin/shipin",
+					"query": ""
+				}
+			]
 		}
 	}
 }

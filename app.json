@@ -2,48 +2,53 @@
   "pages":[
     "pages/main/main",
     "pages/index/index",
+    "pages/huati/huati",
+    "pages/yinyue/yinyue",
+    "pages/shipin/shipin",
     "pages/logs/logs",
     "pages/main/bozhu/detail"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#1E2033",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"#fff"
   },
   "tabBar":{
+    "backgroundColor": "#171826",
     "list":[
       {
         "pagePath": "pages/main/main",
         "text": "播主",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home_light.png"
+        "iconPath": "images/zhubo.png",
+        "selectedIconPath": "images/zhubo_selected.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/huati/huati",
         "text": "话题",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home_light.png"
+        "iconPath": "images/huati.png",
+        "selectedIconPath": "images/huati_selected.png"
       },{
-        "pagePath": "pages/main/main",
+        "pagePath": "pages/yinyue/yinyue",
         "text": "音乐",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home_light.png"
+        "iconPath": "images/yinyue.png",
+        "selectedIconPath": "images/yinyue_selected.png"
       },
       {
-        "pagePath": "pages/main/main",
+        "pagePath": "pages/shipin/shipin",
         "text": "视频",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home_light.png"
+        "iconPath": "images/shipin.png",
+        "selectedIconPath": "images/shipin_selected.png"
       },
       {
         "pagePath": "pages/main/main",
         "text": "我们不一样",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home_light.png"
+        "iconPath": "images/buyang.png",
+        "selectedIconPath": "images/buyang_selected.png"
       }
     ],
-    "selectedColor":"#ff0000"
+    "color": "#7B7BCC",
+    "selectedColor":"#fff"
   },
   "networkTimeout": {
     "request": 30000,
