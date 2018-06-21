@@ -14,7 +14,7 @@ function initChart(canvas, width, height) {
     tooltip: {
       trigger: 'axis',
       axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-        type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        type: 'line'        // 默认为直线，可选为：'line' | 'shadow'
       }
     },
     legend: {
@@ -23,13 +23,13 @@ function initChart(canvas, width, height) {
     grid: {
       left: 20,
       right: 20,
-      bottom: 15,
+      bottom: 115,
       top: 40,
       containLabel: true
     },
     xAxis: [
       {
-        type: 'value',
+        type: 'category',
         axisLine: {
           lineStyle: {
             color: '#999'
@@ -42,7 +42,7 @@ function initChart(canvas, width, height) {
     ],
     yAxis: [
       {
-        type: 'category',
+        type: 'value',
         axisTick: { show: false },
         data: ['汽车之家', '今日头条', '百度贴吧', '一点资讯', '微信', '微博', '知乎'],
         axisLine: {

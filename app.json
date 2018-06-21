@@ -3,7 +3,8 @@
     "pages/main/main",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/main/bozhu/detail"
+    "pages/main/bozhu/detail",
+    "pages/bar/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
