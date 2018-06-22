@@ -67,7 +67,7 @@ Page({
     console.log(e.currentTarget.dataset.id);
     let id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: "bozhu/detail?id=" + id
+      url: "huatidetail/huatidetail?id=" + id
     })
   },
 
@@ -86,7 +86,7 @@ Page({
       from: 1,
       to: this.data.dataStep
     }
-    util.doRequest(this.data.urlApi, params, this.zanList, app.globalData.zhuboApi.dianzanApiType)
+    util.doRequest(this.data.urlApi, params, this.zanList, app.globalData.huatiApi.zuireApiType)
   },
 
   /**
