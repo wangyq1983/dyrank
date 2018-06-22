@@ -14,7 +14,8 @@ Page({
     listBs:[],
     dataStep:20,
     isEnd:false,
-    urlApi: app.globalData.zhuboApi.dianzanApi
+    urlApi: app.globalData.zhuboApi.dianzanApi,
+    apiType: app.globalData.zhuboApi.dianzanApiType
   },
 
 getUrlApi:function(id){
@@ -25,12 +26,22 @@ getUrlApi:function(id){
   return dataUrlList[id];
 },
 
+getApiType:function(id){
+  var dataTypeList = [app.globalData.zhuboApi.dianzanApiType,
+  app.globalData.zhuboApi.fensiType,
+  app.globalData.zhuboApi.pinglunType,
+  app.globalData.zhuboApi.biaoshengType]
+  return dataTypeList[id];
+},
+
   menuFunc:function(e){
     console.log(e.target.dataset.id);
     let getUrl = this.getUrlApi(e.target.dataset.id);
+    let getType = this.getApiType(e.target.dataset.id);
     this.setData({
       sub_menu_cur:e.target.dataset.id,
       urlApi:getUrl,
+      apiType:getType,
       list:[],
       isEnd:false
     });
@@ -38,20 +49,22 @@ getUrlApi:function(id){
       from: 1,
       to: this.data.dataStep
     }
-    util.doRequest(this.data.urlApi, params, this.zanList)
+    util.doRequest(this.data.urlApi, params, this.zanList, this.data.apiType);
   },
 
   //点赞列表 
   zanList:function(res){
     console.log(this.data.list)
+    console.log(res)
     this.setData({
-      list: this.data.list.concat(res.data.data)
+      list: this.data.list.concat(res)
     });
-    if(res.data.data.length == 0){
+    if(res == 0){
       this.setData({
         isEnd: true
       });
-    }
+    };
+    console.log(res[1])
   },
   
   gotoZozhuDetail:function (e){
@@ -72,11 +85,12 @@ getUrlApi:function(id){
    */
 
   onLoad: function (options) {
+    console.log();
     let params = {
       from:1,
       to: this.data.dataStep
     }
-    util.doRequest(this.data.urlApi, params, this.zanList)
+    util.doRequest(this.data.urlApi, params, this.zanList, app.globalData.zhuboApi.dianzanApiType)
   },
 
   /**

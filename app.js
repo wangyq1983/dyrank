@@ -1,6 +1,6 @@
 //app.js
-var webhost = 'http://api-dev.jiyoushe.cn/v2/';
-
+// var webhost = 'http://api-dev.jiyoushe.cn/v2/';
+var webhost = "http://192.168.101.226:8061/";
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -37,11 +37,16 @@ App({
   },
   globalData: {
     userInfo: null,
+    version:'1.0',
     zhuboApi:{
-      dianzanApi: webhost+"circles/get_circle_list",
-      fensi: webhost+"rank/ranking_country_list",
-      pinglun: webhost+"amwaywall/get_list",
-      biaosheng: webhost+"homepage/get_recommend_list"
+      dianzanApi: webhost +"anchor",
+      dianzanApiType:"aLike",
+      fensi: webhost +"anchor",
+      fensiType:"aFans",
+      pinglun: webhost + "anchor",
+      pinglunType:"aComment",
+      biaosheng: webhost +"anchorRise",
+      biaoshengType:"aRise"
     },
   }
 })

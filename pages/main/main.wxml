@@ -7,9 +7,11 @@
   </view> 
 
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 0}}">
-    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='gotoZozhuDetail' data-id="{{item.cid}}">
+    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='gotoZozhuDetail' data-id="{{item.id}}">
       <text>{{index+1}}</text>
-      <text>{{item.name}}</text>
+      <image src='{{item.avatar_url}}' style='width:30px; height:30px;'></image>
+      <text>{{item.nickname}}</text>
+      <text>{{item.comment_count}}</text>
     </view>
     <view wx:if="{{isEnd == true}}"> 
       已经到底了
@@ -17,9 +19,11 @@
   </scroll-view>
 
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 1}}">
-    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='gotoZozhuDetail' data-id='{{item.gid}}'>
-      <text>{{index+1}}</text>
-      <text>{{item.name}}</text>
+    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='gotoZozhuDetail' data-id='{{item.id}}'>
+       <text>{{index+1}}</text>
+      <image src='{{item.avatar_url}}' style='width:30px; height:30px;'></image>
+      <text>{{item.nickname}}</text>
+      <text>{{item.follower_count}}</text>
     </view>
     <view wx:if="{{isEnd == true}}"> 
       已经到底了
@@ -28,8 +32,9 @@
 
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 2}}">
     <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='testChart'>
-      <text>{{index+1}}</text>
-      <text>{{item.game_info.name}}</text>
+      <image src='{{item.avatar_url}}' style='width:30px; height:30px;'></image>
+      <text>{{item.nickname}}</text>
+      <text>{{item.comment_count}}</text>
     </view>
     <view wx:if="{{isEnd == true}}"> 
       已经到底了
@@ -38,8 +43,9 @@
 
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 3}}">
     <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1'>
-      <text>{{index+1}}</text>
-      <text>{{item.content.name}}</text>
+      <image src='{{item.avatar_url}}' style='width:30px; height:30px;'></image>
+      <text>{{item.nickname}}</text>
+      <text>{{item.rise_value}}</text>
     </view>
     <view wx:if="{{isEnd == true}}"> 
       已经到底了
