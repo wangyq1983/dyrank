@@ -1,0 +1,71 @@
+/* pages/huati/huati.wxss */
+.scrollStyle{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #1E2033;
+}
+.listStyle1{
+  margin: 10rpx 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5rpx 30rpx;
+  background-color: #222537;
+  font-size: 30rpx;
+}
+.listNum{
+  margin-right: 20rpx;
+  color: #8386BE;
+}
+.numBg{
+  width: 40rpx;
+  height: 40rpx;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 20rpx;
+}
+.listName{
+  margin-left: 15rpx;
+  color: #fff;
+  max-width: 380rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.TV_img{
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 10rpx;
+}
+.listTV{
+  color: #fff;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+.listEnd{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  color: #fff;
+  margin: 100rpx 0;
+}
+.listStyle1:nth-child(1){
+  background: linear-gradient(#FFA12F,#FF623B);
+}
+.listStyle1:nth-child(2){
+  background: linear-gradient(#00CFE3,#00ADF4);
+}
+.listStyle1:nth-child(3){
+  background: linear-gradient(#587EFB,#8A2EFE);
+} 

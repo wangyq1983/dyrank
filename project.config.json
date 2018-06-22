@@ -9,6 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.94",
+	"appid": "wxcb5482e48acc4b63",
+	"projectname": "WX.DouYin",
 	"appid": "wxfaf04dcf1c40c9c0",
 	"projectname": "dyrank",
 	"condition": {
@@ -20,13 +22,36 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "话题",
+					"pathName": "pages/huati/huati",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "音乐",
+					"pathName": "pages/yinyue/yinyue",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "视频",
+					"pathName": "pages/shipin/shipin",
+					"query": ""
+				}
+			]
 		}
 	}
 }
