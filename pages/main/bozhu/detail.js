@@ -13,7 +13,7 @@ Page({
 
   //详情渲染
   zanDetail: function (res) {
-    console.log(res.data);
+    console.log(res);
     this.setData({
       dataCon:res,
       testVideo:'https://api.amemv.com/aweme/v1/play/?video_id=42c41824794a48c998c1f469fd89aa61&line=1&ratio=720p&watermark=0&media_type=4&vr_type=0&test_cdn=None&improve_bitrate=0'
@@ -62,7 +62,12 @@ Page({
     util.doRequest(app.globalData.zhuboApi.detail, params, this.zanDetail, app.globalData.zhuboApi.detailType)
   },
 
-  
+  shareTest:function(){
+    console.log(12)
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
