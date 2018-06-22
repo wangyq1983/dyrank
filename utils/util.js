@@ -94,7 +94,7 @@ const objToStr = obj => {
  * @param {回调函数} callback 
  * @param {动作类型} types 
  */
-const doRequest = (url, params, callback, types,objparams) => {
+const doRequest = (url, params, callback, types) => {
   console.log(url);
   console.log(params);
   console.log(types);
@@ -114,9 +114,9 @@ const doRequest = (url, params, callback, types,objparams) => {
     url: url,
     data: {
       type: types,
-      param: {},
-      from: params.from,
-      to:params.to,
+      param: params,
+      // from: params.from,
+      // to:params.to,
       version: app.globalData.version,
       key:key,
       timeStamp: timestamp
