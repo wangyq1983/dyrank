@@ -50,5 +50,11 @@ App({
       detail: webhost + "anchorDetail",
       detailType:"anchor"
     },
+    huatiApi:{
+      zuireApi: webhost +"topicHottest",
+      zuireApiType:"aLike",
+      biaosheng: webhost +"topicRise",
+      biaoshengType:"aRise"
+    },
   }
 })

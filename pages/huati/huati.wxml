@@ -8,9 +8,9 @@
     <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='gotoZozhuDetail' data-id="{{item.cid}}">
       <text class='listNum numBg' wx:if="{{index < 3}}">{{index+1}}</text>
       <text class='listNum' wx:if="{{index >= 3}}">{{index+1}}</text>
-      <text class='listName'>#{{item.name}}</text>      
-      <view class='listTV' wx:if="{{index < 3}}"><image class='TV_img' src='../../images/TV_white.png'></image>2200w</view>
-      <view class='listTV' wx:if="{{index >= 3}}"><image class='TV_img' src='../../images/TV_black.png'></image>2200w</view>
+      <text class='listName'>#{{item.topic_title}}</text>      
+      <view class='listTV' wx:if="{{index < 3}}"><image class='TV_img' src='../../images/TV_white.png'></image>{{item.video_count}}</view>
+      <view class='listTV' wx:if="{{index >= 3}}"><image class='TV_img' src='../../images/TV_black.png'></image>{{item.video_count}}</view>
     </view>    
     <view wx:if="{{isEnd == true}}" class='listEnd'> 
       已经到底了
@@ -21,9 +21,9 @@
     <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='gotoZozhuDetail' data-id='{{item.gid}}'>
       <text class='listNum numBg' wx:if="{{index < 3}}">{{index+1}}</text>
       <text class='listNum' wx:if="{{index >= 3}}">{{index+1}}</text>
-      <text class='listName'>#{{item.name}}</text>
-      <view class='listTV' wx:if="{{index < 3}}"><image class='TV_img' src='../../images/TV_white.png'></image>2200w</view>
-      <view class='listTV' wx:if="{{index >= 3}}"><image class='TV_img' src='../../images/TV_black.png'></image>2200w</view>      
+      <text class='listName'>#{{item.topic_title}}</text>
+      <view class='listTV' wx:if="{{index < 3}}"><image class='TV_img' src='../../images/TV_white.png'></image>{{item.video_count}}</view>
+      <view class='listTV' wx:if="{{index >= 3}}"><image class='TV_img' src='../../images/TV_black.png'></image>{{item.video_count}}</view>      
     </view>
     <view wx:if="{{isEnd == true}}" class='listEnd'> 
       已经到底了
