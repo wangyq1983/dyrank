@@ -70,6 +70,7 @@ getApiType:function(id){
   gotoZozhuDetail:function (e){
     console.log(e.currentTarget.dataset.id);
     let id = e.currentTarget.dataset.id
+    console.log('id='+id);
     wx.navigateTo({
       url: "bozhu/detail?id="+id
     })

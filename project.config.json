@@ -48,6 +48,12 @@
 					"name": "视频",
 					"pathName": "pages/shipin/shipin",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "详情",
+					"pathName": "pages/main/bozhu/detail",
+					"query": "id=1"
 				}
 			]
 		}

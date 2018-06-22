@@ -1,8 +1,29 @@
 <view>
-  <view>{{dataCon.game.name}}</view>
+  <image src='{{dataCon.avatar_url}}'></image>
+  <view>
+    <text>{{dataCon.nickname}}</text>
+    <text>{{dataCon.signatrue}}</text>
+    <view>
+      <text>{{dataCon.geography}}</text>
+      <text>{{dataCon.constellation}}</text>
+    </view>
+    <view>
+      <text>{{dataCon.like_count}}获赞</text>
+      <text>{{dataCon.follower_count}}粉丝</text>
+      <text>{{dataCon.comment_count}}评论</text>
+    </view>
+  </view>
   <view>
     {{dataCon.game.sys_limit}}
   </view>
-  <image src='{{dataCon.game.images[0]}}' bindtap='copyPath' data-path='{{dataCon.game.images[0]}}'></image>
+  <view>
+    <view wx:for="{{dataCon.videoList}}" wx:key="{{index}}" >
+      <text>{{item.id}}</text>
+      <text>{{item.cover_url}}</text>
+      <image src='{{item.cover_url}}'></image>
+    </view>
+  </view>
   <video src="{{testVideo}}" controls ></video>
+  <button open-type='share'>分享</button>
+   <view bindtap='shareTest'>分享test</view> 
 </view>
