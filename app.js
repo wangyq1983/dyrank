@@ -46,7 +46,9 @@ App({
       pinglun: webhost + "anchor",
       pinglunType:"aComment",
       biaosheng: webhost +"anchorRise",
-      biaoshengType:"aRise"
+      biaoshengType:"aRise",
+      detail: webhost + "anchorDetail",
+      detailType:"anchor"
     },
   }
 })

@@ -1,4 +1,5 @@
-const util = require('../../../utils/util.js')
+const util = require('../../../utils/util.js');
+const app = getApp();
 
 Page({
 
@@ -14,11 +15,11 @@ Page({
   zanDetail: function (res) {
     console.log(res.data);
     this.setData({
-      dataCon:res.data.data,
+      dataCon:res,
       testVideo:'https://api.amemv.com/aweme/v1/play/?video_id=42c41824794a48c998c1f469fd89aa61&line=1&ratio=720p&watermark=0&media_type=4&vr_type=0&test_cdn=None&improve_bitrate=0'
     });
     wx.setNavigationBarTitle({
-      title: res.data.data.game.name
+      title: "播主"+res.nickname
     })
   },
   //复制路径到剪贴板
@@ -56,9 +57,9 @@ Page({
   onLoad: function (options) {
     console.log(options);
     var params ={
-      gid:options.id
+      id:options.id
     };
-    util.doRequest('http://api.jiyoushe.cn/v2/game/get_game_detail', params, this.zanDetail)
+    util.doRequest(app.globalData.zhuboApi.detail, params, this.zanDetail, app.globalData.zhuboApi.detailType)
   },
 
   
