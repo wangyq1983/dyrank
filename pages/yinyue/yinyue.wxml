@@ -7,9 +7,9 @@
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 0}}">
     <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='gotoZozhuDetail' data-id="{{item.cid}}">
       <text class='listNum'>{{index+1}}</text>
-      <image class='listMusicImg' src='../../images/timg.png'></image>
-      <text class='listName'>🎵{{item.name}}</text>
-      <text class='listTV'>2200w视频</text>
+      <image class='listMusicImg' src='{{item.music_url}}'></image>
+      <text class='listName'>🎵{{item.music_title}}</text>
+      <text class='listTV'>{{item.video_count}}</text>
     </view>
     <view wx:if="{{isEnd == true}}" class='listEnd'> 
       已经到底了
@@ -19,9 +19,9 @@
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 1}}">
     <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='gotoZozhuDetail' data-id='{{item.gid}}'>
       <text class='listNum'>{{index+1}}</text>
-      <image class='listMusicImg' src='../../images/timg.png'></image>
-      <text class='listName'>🎵{{item.name}}</text>
-      <text class='listTV'>2200w视频</text>      
+      <image class='listMusicImg' src='{{item.music_url}}'></image>
+      <text class='listName'>🎵{{item.music_title}}</text>
+      <text class='listTV'>{{item.rise_value}}</text>      
     </view>
     <view wx:if="{{isEnd == true}}" class='listEnd'> 
       已经到底了

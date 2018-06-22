@@ -52,9 +52,23 @@ App({
     },
     huatiApi:{
       zuireApi: webhost +"topicHottest",
-      zuireApiType:"aLike",
+      zuireApiType:"tHottest",
       biaosheng: webhost +"topicRise",
-      biaoshengType:"aRise"
+      biaoshengType:"tRise"
+    },
+    yinyueApi: {
+      zuireApi: webhost + "musicHottest",
+      zuireApiType: "mHottest",
+      biaosheng: webhost + "musicRise",
+      biaoshengType: "mRise"
+    },
+    shipinApi: {
+      dianzanApi: webhost + "video",
+      dianzanApiType: "vLike",
+      pinglunApi: webhost + "video",
+      pinglunApiType: "vComment",
+      biaosheng: webhost + "musicRise",
+      biaoshengType: "vRise"
     },
   }
 })
