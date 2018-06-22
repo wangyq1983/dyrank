@@ -9,6 +9,8 @@ Page({
   data: {
     sub_menu_cur:0,
     list: [],
+    listThree:[],
+    listOther:[],
     listFs:[],
     listPl:[],
     listBs:[],
@@ -52,19 +54,26 @@ getApiType:function(id){
     util.doRequest(this.data.urlApi, params, this.zanList, this.data.apiType);
   },
 
-  //点赞列表 
+  //ajax方法的回调函数
   zanList:function(res){
     console.log(this.data.list)
     console.log(res)
     this.setData({
       list: this.data.list.concat(res)
     });
-    if(res == 0){
+    console.log('list is');
+    console.log(this.data.list);
+    var three = this.data.list.slice(0,2);
+    var other = this.data.list.slice(3);
+    this.setData({
+      listThree: three,
+      listOther: other
+    });
+    if(res.length == 0){
       this.setData({
         isEnd: true
       });
     };
-    console.log(res[1])
   },
   
   gotoZozhuDetail:function (e){

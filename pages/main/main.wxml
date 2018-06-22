@@ -7,11 +7,39 @@
   </view> 
 
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 0}}">
-    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='gotoZozhuDetail' data-id="{{item.id}}">
-      <text>{{index+1}}</text>
-      <image src='{{item.avatar_url}}' style='width:30px; height:30px;'></image>
-      <text>{{item.nickname}}</text>
-      <text>{{item.comment_count}}</text>
+    <view class='top3'>
+      <view class='secondBozhu'>
+      <view>
+        <image src='{{list[1].avatar_url}}' class='secondImg'></image>
+      </view>
+      <view>{{list[1].nickname}}</view>
+      <view>{{list[1].comment_count}}</view>
+      </view>
+      <view class='firstBozhu'>
+      <view>
+        <image src='{{list[0].avatar_url}}' class='firstImg'></image>
+      </view>
+      <view>{{list[0].nickname}}</view>
+      <view>{{list[0].comment_count}}</view>
+      </view>
+      <view class='thirdBozhu'>
+      <view>
+        <image src='{{list[2].avatar_url}}' class='thirdImg'></image>
+      </view>
+      <view>{{list[2].nickname}}</view>
+      <view>{{list[2].comment_count}}</view>
+      </view>
+    </view>
+    <view wx:for="{{listOther}}" wx:key="{{index}}" class='listStyle1 zanL' bindtap='gotoZozhuDetail' data-id="{{item.id}}">
+    <view class='itemLeft'>
+      <text class='listNum'>{{index+4}}</text>
+      <image src='{{item.avatar_url}}' class='iconImg'></image>
+      <text class='listName'>{{item.nickname}}</text>
+    </view>
+      <view>
+        <text class='zanCount'>{{item.comment_count}}</text>
+      </view>
+      
     </view>
     <view wx:if="{{isEnd == true}}"> 
       已经到底了
