@@ -48,5 +48,11 @@ App({
       biaosheng: webhost +"anchorRise",
       biaoshengType:"aRise"
     },
+    huatiApi:{
+      zuireApi: webhost +"topicHottest",
+      zuireApiType:"aLike",
+      biaosheng: webhost +"topicRise",
+      biaoshengType:"aRise"
+    },
   }
 })

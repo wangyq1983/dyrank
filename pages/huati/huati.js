@@ -14,23 +14,30 @@ Page({
     listBs: [],
     dataStep: 20,
     isEnd: false,
-    urlApi: app.globalData.zhuboApi.dianzanApi
+    urlApi: app.globalData.huatiApi.zuireApi,
+    apiType: app.globalData.huatiApi.zuireApiType
   },
 
   getUrlApi: function (id) {
-    var dataUrlList = [app.globalData.zhuboApi.dianzanApi,
-    app.globalData.zhuboApi.fensi,
-    app.globalData.zhuboApi.pinglun,
-    app.globalData.zhuboApi.biaosheng]
+    var dataUrlList = [app.globalData.huatiApi.zuireApi,
+    app.globalData.huatiApi.biaosheng]
     return dataUrlList[id];
+  },
+
+  getApiType: function (id) {
+    var dataTypeList = [app.globalData.huatiApi.huatiApiType,
+    app.globalData.huatiApi.biaoshengType]
+    return dataTypeList[id];
   },
 
   menuFunc: function (e) {
     console.log(e.target.dataset.id);
     let getUrl = this.getUrlApi(e.target.dataset.id);
+    let getType = this.getApiType(e.target.dataset.id);
     this.setData({
       sub_menu_cur: e.target.dataset.id,
       urlApi: getUrl,
+      apiType: getType,
       list: [],
       isEnd: false
     });
@@ -38,20 +45,22 @@ Page({
       from: 1,
       to: this.data.dataStep
     }
-    util.doRequest(this.data.urlApi, params, this.zanList)
+    util.doRequest(this.data.urlApi, params, this.zanList, this.data.apiType);
   },
 
   //点赞列表 
   zanList: function (res) {
     console.log(this.data.list)
+    console.log(res)
     this.setData({
-      list: this.data.list.concat(res.data.data)
+      list: this.data.list.concat(res)
     });
-    if (res.data.data.length == 0) {
+    if (res == 0) {
       this.setData({
         isEnd: true
       });
-    }
+    };
+    console.log(res[1])
   },
 
   gotoZozhuDetail: function (e) {
@@ -62,16 +71,22 @@ Page({
     })
   },
 
+  testChart: function (e) {
+    wx.navigateTo({
+      url: '../bar/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
 
   onLoad: function (options) {
+    console.log();
     let params = {
       from: 1,
       to: this.data.dataStep
     }
-    util.doRequest(this.data.urlApi, params, this.zanList)
+    util.doRequest(this.data.urlApi, params, this.zanList, app.globalData.zhuboApi.dianzanApiType)
   },
 
   /**
