@@ -1,3 +1,24 @@
 <!--pages/yinyue/yinyuedetail/yinyuedetail.wxml-->
-<text>pages/yinyue/yinyuedetail/yinyuedetail.wxml</text>
-<text>我是音乐详情页</text>
+<view class='huatibody'>  
+  <view class='huatitop'>
+    <image src='../../../images/jinghao.png' class='jinghao'></image>
+    <text class='topic_title'>{{dataCon.music_name}}</text>
+    <text class='video_count'>音乐视频总量{{dataCon.video_count}}</text>    
+  </view>  
+  <text class='video_hot'>话题最热视频</text>  
+  <view class='shipinLayout'>
+    <view wx:for="{{dataCon.videoList}}" wx:key="{{index}}" class='huatiShipin' style='background:url({{item.cover_url}});background-size:100% 100%'>      
+      <text class='shipinNum' wx:if="{{index < 10}}">0{{index+1}}</text>
+      <text class='shipinNum' wx:if="{{index >= 10}}">{{index+1}}</text>
+      <view class='zanCount'>
+        <text>{{item.video_like_count}}</text>
+        <image src='../../../images/heart.png' class='huatiHeart'></image>
+      </view>      
+      <!-- <text>{{item.cover_url}}</text> -->          
+    </view>
+  </view>
+  <!-- <video src="{{testVideo}}" controls ></video> -->
+  <button open-type='share' class='huatiShare'>分享</button>
+   <!-- <view bindtap='shareTest'>分享test</view>  -->
+  <text class='dataProvide'>数据由 海马云 提供</text>
+</view>

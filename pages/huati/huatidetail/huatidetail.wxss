@@ -13,11 +13,11 @@
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 100rpx;
+  padding-top: 80rpx;
 }
 .jinghao{
-  width: 150rpx;
-  height: 150rpx;
+  width: 120rpx;
+  height: 120rpx;
   margin-bottom: 50rpx;
 }
 .topic_title{
@@ -50,15 +50,37 @@
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: flex-end;
+  border-radius: 8rpx;
+}
+.shipinNum{
+  color: #fff;
+  text-shadow: 0 1px 4px #000;
+  margin-left: 15rpx;
+  margin-bottom: 15rpx;
+  flex: auto;
 }
 .zanCount{
   align-self: flex-start;
-  flex: auto;
-  text-align: right;
+  background-color: #13141F;
+  padding: 10rpx;
+  margin-right: 15rpx;
+  margin-top: 15rpx;
+  border-radius: 10rpx;
+  color: #50E3C2;
+}
+.huatiHeart{
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 12rpx;
 }
 .huatiShare{
   width: 91%;
   margin: 80rpx;
   background: linear-gradient(#6178F3,#7C4FD4);
   color: #FFFFFF;
+}
+.dataProvide{
+  color: #9B9B9B;
+  font-size: 30rpx;
+  margin-bottom: 60rpx;
 }
