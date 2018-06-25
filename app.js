@@ -54,13 +54,17 @@ App({
       zuireApi: webhost +"topicHottest",
       zuireApiType:"tHottest",
       biaosheng: webhost +"topicRise",
-      biaoshengType:"tRise"
+      biaoshengType:"tRise",
+      detail: webhost + "topicDetail",
+      detailType: "topic"
     },
     yinyueApi: {
       zuireApi: webhost + "musicHottest",
       zuireApiType: "mHottest",
       biaosheng: webhost + "musicRise",
-      biaoshengType: "mRise"
+      biaoshengType: "mRise",
+      detail: webhost + "musicDetail",
+      detailType: "music"
     },
     shipinApi: {
       dianzanApi: webhost + "video",
