@@ -1,28 +1,18 @@
-<view>  
-  <view>
-    <text>#</text>
-    <text>{{dataCon.topic_title}}</text>
-    <view>
-      <text>{{dataCon.geography}}</text>
-      <text>{{dataCon.constellation}}</text>
-    </view>
-    <view>
-      <text>{{dataCon.like_count}}获赞</text>
-      <text>{{dataCon.follower_count}}粉丝</text>
-      <text>{{dataCon.comment_count}}评论</text>
-    </view>
-  </view>
-  <view>
-    {{dataCon.game.sys_limit}}
-  </view>
-  <view>
-    <view wx:for="{{dataCon.videoList}}" wx:key="{{index}}" >
-      <text>{{item.id}}</text>
-      <text>{{item.cover_url}}</text>
-      <image src='{{item.cover_url}}'></image>
+<view class='huatibody'>  
+  <view class='huatitop'>
+    <image src='../../../images/jinghao.png' class='jinghao'></image>
+    <text class='topic_title'>{{dataCon.topic_title}}</text>
+    <text class='video_count'>话题视频总量{{dataCon.video_count}}</text>    
+  </view>  
+  <text class='video_hot'>话题最热视频</text>  
+  <view class='shipinLayout'>
+    <view wx:for="{{dataCon.videoList}}" wx:key="{{index}}" class='huatiShipin' style='background:url({{item.cover_url}});background-size:100% 100%'>      
+      <text>{{index+1}}</text>
+      <text class='zanCount'>{{item.video_like_count}}</text>
+      <!-- <text>{{item.cover_url}}</text> -->          
     </view>
   </view>
-  <video src="{{testVideo}}" controls ></video>
-  <button open-type='share'>分享</button>
-   <view bindtap='shareTest'>分享test</view> 
+  <!-- <video src="{{testVideo}}" controls ></video> -->
+  <button open-type='share' class='huatiShare'>分享</button>
+   <!-- <view bindtap='shareTest'>分享test</view>  -->
 </view>
