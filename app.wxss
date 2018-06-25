@@ -113,7 +113,7 @@
 .listName{
   margin-left: 39rpx;
   color: #fff;
-  max-width: 360rpx;
+  max-width: 180rpx;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -139,39 +139,113 @@
   font-size:24rpx;
   font-family:PingFangSC-Medium;
   color:#4A4C76;
+  padding-left:5rpx;
 }
 .top3{
-  width:100%;
+  width:90%;
   height:370rpx;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  padding:0 5%;
 }
 .firstBozhu{
-  width:33.3%;
+  width:180rpx;
   height: 370rpx
 }
 .firstImg{
   width:180rpx;
   height:180rpx;
   border-radius: 180rpx;
+  margin-top: 29rpx;
 }
 .secondBozhu{
-  width:33.3%;
+  width:150rpx;
   height: 370rpx
 }
 .secondImg{
   width:150rpx;
   height:150rpx;
   border-radius: 150rpx;
+  margin-top: 23rpx;
 }
 .thirdBozhu{
-  width:33.3%;
+  width:150rpx;
   height: 370rpx
 }
 .thirdImg{
   width:150rpx;
   height:150rpx;
   border-radius: 150rpx;
+}
+.topNickName{
+  text-align: center;
+  font-size:30rpx;
+  font-family:PingFangSC-Medium;
+  color:rgba(80,227,194,1);
+  width:150rpx;
+  line-height:42rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.topCommentCount{
+  line-height: 32rpx;
+  font-size:22rpx;
+  font-family:PingFangSC-Medium;
+  color:rgba(74,76,118,1);
+  text-align: center;
+  padding-left:5rpx;
+}
+.topImgBox{
+  width:150rpx;
+  height:180rpx;
+  position: relative;
+  margin-top:80rpx;
+}
+.firstImgBox{
+  width:180rpx;
+  height:220rpx;
+  position: relative;
+  margin-top:40rpx;
+}
+.crow1{
+  width:34rpx;height:29rpx;position:absolute; top:0; left:73rpx
+}
+.crow2{
+  width:28rpx;height:23rpx;position:absolute; top:0; left:61rpx
+}
+.secondNum,.firstNum,.thirdNum{
+  width:34rpx;
+  height:34rpx;
+  line-height: 34rpx;
+  display: block;
+  background:rgba(154,46,255,1);
+  border-radius: 34rpx;
+  position: absolute;
+  right:6rpx;
+  bottom:20rpx;
+  z-index: 9;
+  color:#fff;
+  font-size:24rpx;
+  font-family:PingFangSC-Medium;
+  text-align: center
+}
+.firstNum{
+  background:rgba(255,189,29,1);
+}
+.thirdNum{
+  background:rgba(72,166,255,1);
+}
+.topCount{
+  display: flex;
+  width:150rpx;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+.ml80{
+  margin-left: 80rpx;
 }
 .listContainer{
   margin-top:0;

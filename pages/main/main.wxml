@@ -8,26 +8,41 @@
 
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 0}}">
     <view class='top3'>
-      <view class='secondBozhu'>
-      <view>
+      <view class='secondBozhu' bindtap='gotoZozhuDetail' data-id="{{list[1].id}}">
+      <view class='topImgBox'>
+        <image src='../../images/crown2.png' class='crow2'></image>
         <image src='{{list[1].avatar_url}}' class='secondImg'></image>
+        <text class='secondNum'>2</text>
       </view>
-      <view>{{list[1].nickname}}</view>
-      <view>{{list[1].comment_count}}</view>
+      <view class='topNickName'>{{list[1].nickname}}</view>
+      <view class='topCount'>
+        <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
+        <text class='topCommentCount'>{{list[1].comment_count}}</text>
       </view>
-      <view class='firstBozhu'>
-      <view>
+      </view>
+      <view class='firstBozhu' bindtap='gotoZozhuDetail' data-id="{{list[0].id}}">
+      <view class='firstImgBox'>
+        <image src='../../images/crown1.png' class='crow1'></image>
         <image src='{{list[0].avatar_url}}' class='firstImg'></image>
+        <text class='firstNum'>1</text>
       </view>
-      <view>{{list[0].nickname}}</view>
-      <view>{{list[0].comment_count}}</view>
+      <view class='topNickName'>{{list[0].nickname}}</view>
+      <view class='topCount'>
+        <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
+        <text class='topCommentCount'>{{list[0].comment_count}}</text>
       </view>
-      <view class='thirdBozhu'>
-      <view>
-        <image src='{{list[2].avatar_url}}' class='thirdImg'></image>
       </view>
-      <view>{{list[2].nickname}}</view>
-      <view>{{list[2].comment_count}}</view>
+      <view class='thirdBozhu' bindtap='gotoZozhuDetail' data-id="{{list[2].id}}">
+      <view class='topImgBox'>
+        <image src='../../images/crown3.png' class='crow2'></image>
+        <image src='{{list[2].avatar_url}}' class='secondImg'></image>
+        <text class='thirdNum'>3</text>
+      </view>
+      <view class='topNickName'>{{list[2].nickname}}</view>
+      <view class='topCount'>
+        <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
+        <text class='topCommentCount'>{{list[2].comment_count}}</text>
+      </view>
       </view>
     </view>
     <view wx:for="{{listOther}}" wx:key="{{index}}" class='listStyle1 zanL' bindtap='gotoZozhuDetail' data-id="{{item.id}}">
@@ -37,6 +52,7 @@
       <text class='listName'>{{item.nickname}}</text>
     </view>
       <view>
+        <image src='../../images/heart.png' style='width:20rpx; height:20rpx;'></image>
         <text class='zanCount'>{{item.comment_count}}</text>
       </view>
       
@@ -47,11 +63,55 @@
   </scroll-view>
 
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 1}}">
-    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='gotoZozhuDetail' data-id='{{item.id}}'>
-       <text>{{index+1}}</text>
-      <image src='{{item.avatar_url}}' style='width:30px; height:30px;'></image>
-      <text>{{item.nickname}}</text>
-      <text>{{item.follower_count}}</text>
+    <view class='top3'>
+      <view class='secondBozhu' bindtap='gotoZozhuDetail' data-id="{{list[1].id}}">
+      <view class='topImgBox'>
+        <image src='../../images/crown2.png' class='crow2'></image>
+        <image src='{{list[1].avatar_url}}' class='secondImg'></image>
+        <text class='secondNum'>2</text>
+      </view>
+      <view class='topNickName'>{{list[1].nickname}}</view>
+      <view class='topCount'>
+        <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
+        <text class='topCommentCount'>{{list[1].comment_count}}</text>
+      </view>
+      </view>
+      <view class='firstBozhu' bindtap='gotoZozhuDetail' data-id="{{list[0].id}}">
+      <view class='firstImgBox'>
+        <image src='../../images/crown1.png' class='crow1'></image>
+        <image src='{{list[0].avatar_url}}' class='firstImg'></image>
+        <text class='firstNum'>1</text>
+      </view>
+      <view class='topNickName'>{{list[0].nickname}}</view>
+      <view class='topCount'>
+        <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
+        <text class='topCommentCount'>{{list[0].comment_count}}</text>
+      </view>
+      </view>
+      <view class='thirdBozhu' bindtap='gotoZozhuDetail' data-id="{{list[2].id}}">
+      <view class='topImgBox'>
+        <image src='../../images/crown3.png' class='crow2'></image>
+        <image src='{{list[2].avatar_url}}' class='secondImg'></image>
+        <text class='thirdNum'>3</text>
+      </view>
+      <view class='topNickName'>{{list[2].nickname}}</view>
+      <view class='topCount'>
+        <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
+        <text class='topCommentCount'>{{list[2].comment_count}}</text>
+      </view>
+      </view>
+    </view>
+    <view wx:for="{{listOther}}" wx:key="{{index}}" class='listStyle1 zanL' bindtap='gotoZozhuDetail' data-id="{{item.id}}">
+    <view class='itemLeft'>
+      <text class='listNum'>{{index+4}}</text>
+      <image src='{{item.avatar_url}}' class='iconImg'></image>
+      <text class='listName'>{{item.nickname}}</text>
+    </view>
+      <view>
+        <image src='../../images/heart.png' style='width:20rpx; height:20rpx;'></image>
+        <text class='zanCount'>{{item.comment_count}}</text>
+      </view>
+      
     </view>
     <view wx:if="{{isEnd == true}}"> 
       已经到底了
@@ -59,10 +119,55 @@
   </scroll-view>
 
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 2}}">
-    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='testChart'>
-      <image src='{{item.avatar_url}}' style='width:30px; height:30px;'></image>
-      <text>{{item.nickname}}</text>
-      <text>{{item.comment_count}}</text>
+    <view class='top3'>
+      <view class='secondBozhu' bindtap='gotoZozhuDetail' data-id="{{list[1].id}}">
+      <view class='topImgBox'>
+        <image src='../../images/crown2.png' class='crow2'></image>
+        <image src='{{list[1].avatar_url}}' class='secondImg'></image>
+        <text class='secondNum'>2</text>
+      </view>
+      <view class='topNickName'>{{list[1].nickname}}</view>
+      <view class='topCount'>
+        <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
+        <text class='topCommentCount'>{{list[1].comment_count}}</text>
+      </view>
+      </view>
+      <view class='firstBozhu' bindtap='gotoZozhuDetail' data-id="{{list[0].id}}">
+      <view class='firstImgBox'>
+        <image src='../../images/crown1.png' class='crow1'></image>
+        <image src='{{list[0].avatar_url}}' class='firstImg'></image>
+        <text class='firstNum'>1</text>
+      </view>
+      <view class='topNickName'>{{list[0].nickname}}</view>
+      <view class='topCount'>
+        <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
+        <text class='topCommentCount'>{{list[0].comment_count}}</text>
+      </view>
+      </view>
+      <view class='thirdBozhu' bindtap='gotoZozhuDetail' data-id="{{list[2].id}}">
+      <view class='topImgBox'>
+        <image src='../../images/crown3.png' class='crow2'></image>
+        <image src='{{list[2].avatar_url}}' class='secondImg'></image>
+        <text class='thirdNum'>3</text>
+      </view>
+      <view class='topNickName'>{{list[2].nickname}}</view>
+      <view class='topCount'>
+        <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
+        <text class='topCommentCount'>{{list[2].comment_count}}</text>
+      </view>
+      </view>
+    </view>
+    <view wx:for="{{listOther}}" wx:key="{{index}}" class='listStyle1 zanL' bindtap='gotoZozhuDetail' data-id="{{item.id}}">
+    <view class='itemLeft'>
+      <text class='listNum'>{{index+4}}</text>
+      <image src='{{item.avatar_url}}' class='iconImg'></image>
+      <text class='listName'>{{item.nickname}}</text>
+    </view>
+      <view>
+        <image src='../../images/heart.png' style='width:20rpx; height:20rpx;'></image>
+        <text class='zanCount'>{{item.comment_count}}</text>
+      </view>
+      
     </view>
     <view wx:if="{{isEnd == true}}"> 
       已经到底了
@@ -70,10 +175,55 @@
   </scroll-view>
 
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 3}}">
-    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1'>
-      <image src='{{item.avatar_url}}' style='width:30px; height:30px;'></image>
-      <text>{{item.nickname}}</text>
-      <text>{{item.rise_value}}</text>
+    <view class='top3'>
+      <view class='secondBozhu' bindtap='gotoZozhuDetail' data-id="{{list[1].id}}">
+      <view class='topImgBox'>
+        <image src='../../images/crown2.png' class='crow2'></image>
+        <image src='{{list[1].avatar_url}}' class='secondImg'></image>
+        <text class='secondNum'>2</text>
+      </view>
+      <view class='topNickName'>{{list[1].nickname}}</view>
+      <view class='topCount'>
+        <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
+        <text class='topCommentCount'>{{list[1].comment_count}}</text>
+      </view>
+      </view>
+      <view class='firstBozhu' bindtap='gotoZozhuDetail' data-id="{{list[0].id}}">
+      <view class='firstImgBox'>
+        <image src='../../images/crown1.png' class='crow1'></image>
+        <image src='{{list[0].avatar_url}}' class='firstImg'></image>
+        <text class='firstNum'>1</text>
+      </view>
+      <view class='topNickName'>{{list[0].nickname}}</view>
+      <view class='topCount'>
+        <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
+        <text class='topCommentCount'>{{list[0].comment_count}}</text>
+      </view>
+      </view>
+      <view class='thirdBozhu' bindtap='gotoZozhuDetail' data-id="{{list[2].id}}">
+      <view class='topImgBox'>
+        <image src='../../images/crown3.png' class='crow2'></image>
+        <image src='{{list[2].avatar_url}}' class='secondImg'></image>
+        <text class='thirdNum'>3</text>
+      </view>
+      <view class='topNickName'>{{list[2].nickname}}</view>
+      <view class='topCount'>
+        <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
+        <text class='topCommentCount'>{{list[2].comment_count}}</text>
+      </view>
+      </view>
+    </view>
+    <view wx:for="{{listOther}}" wx:key="{{index}}" class='listStyle1 zanL' bindtap='gotoZozhuDetail' data-id="{{item.id}}">
+    <view class='itemLeft'>
+      <text class='listNum'>{{index+4}}</text>
+      <image src='{{item.avatar_url}}' class='iconImg'></image>
+      <text class='listName'>{{item.nickname}}</text>
+    </view>
+      <view>
+        <image src='../../images/heart.png' style='width:20rpx; height:20rpx;'></image>
+        <text class='zanCount'>{{item.comment_count}}</text>
+      </view>
+      
     </view>
     <view wx:if="{{isEnd == true}}"> 
       已经到底了
