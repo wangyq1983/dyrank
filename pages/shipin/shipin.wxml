@@ -6,7 +6,7 @@
   </view> 
 
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 0}}">
-    <view style='background-image:url({{item.cover_url}})' wx:for="{{list}}" wx:key="{{index}}" class='listStyle2' bindtap='gotoZozhuDetail' data-id="{{item.cid}}">
+    <view style='background-image:url({{item.cover_url}})' wx:for="{{list}}" wx:key="{{index}}" class='listStyle2' bindtap='gotoZozhuDetail' data-id="{{item.id}}">
       <text class='listNum'>{{index+1}}</text>
       <text class='listTV'>{{item.like_count}}</text>         
     </view>
@@ -26,7 +26,7 @@
   </scroll-view>
 
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 2}}">
-    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle2' bindtap='gotoZozhuDetail' data-id='{{item.gid}}'>
+    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle2' bindtap='gotoZozhuDetail' data-id='{{item.id}}'>
       <text class='listNum'>{{index+1}}</text>
       <text class='listTV'>2200w视频</text>      
     </view>

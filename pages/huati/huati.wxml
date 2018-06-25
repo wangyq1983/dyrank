@@ -18,7 +18,7 @@
   </scroll-view>
 
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 1}}">
-    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='gotoZozhuDetail' data-id='{{item.gid}}'>
+    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='gotoZozhuDetail' data-id='{{item.id}}'>
       <text class='listNum numBg' wx:if="{{index < 3}}">{{index+1}}</text>
       <text class='listNum' wx:if="{{index >= 3}}">{{index+1}}</text>
       <text class='listName'>#{{item.topic_title}}</text>
