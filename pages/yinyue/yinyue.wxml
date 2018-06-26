@@ -6,10 +6,12 @@
 
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 0}}">
     <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='gotoZozhuDetail' data-id="{{item.id}}">
-      <text class='listNum'>{{index+1}}</text>
+      <text class='listNum numBg' wx:if="{{index < 3}}">{{index+1}}</text>
+      <text class='listNum numWid' wx:if="{{index >= 3}}">{{index+1}}</text>      
       <image class='listMusicImg' src='{{item.music_url}}'></image>
-      <text class='listName'>🎵{{item.music_title}}</text>
-      <text class='listTV'>{{item.video_count}}</text>
+      <text class='listName'>🎵{{item.music_name}}</text>
+      <view class='listTV' wx:if="{{index < 3}}"><image class='TV_img' src='../../images/TV_white.png'></image>{{item.video_count}}</view>
+      <view class='listTV' wx:if="{{index >= 3}}"><image class='TV_img' src='../../images/TV_black.png'></image>{{item.video_count}}</view>      
     </view>
     <view wx:if="{{isEnd == true}}" class='listEnd'> 
       已经到底了
@@ -18,10 +20,12 @@
 
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 1}}">
     <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='gotoZozhuDetail' data-id='{{item.id}}'>
-      <text class='listNum'>{{index+1}}</text>
+      <text class='listNum numBg' wx:if="{{index < 3}}">{{index+1}}</text>
+      <text class='listNum numWid' wx:if="{{index >= 3}}">{{index+1}}</text>
       <image class='listMusicImg' src='{{item.music_url}}'></image>
-      <text class='listName'>🎵{{item.music_title}}</text>
-      <text class='listTV'>{{item.rise_value}}</text>      
+      <text class='listName'>🎵{{item.music_name}}</text>
+      <view class='listTV' wx:if="{{index < 3}}"><image class='TV_img' src='../../images/TV_white.png'></image>{{item.rise_value}}</view>
+      <view class='listTV' wx:if="{{index >= 3}}"><image class='TV_img' src='../../images/TV_black.png'></image>{{item.rise_value}}</view>
     </view>
     <view wx:if="{{isEnd == true}}" class='listEnd'> 
       已经到底了

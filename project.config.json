@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -54,6 +54,24 @@
 					"name": "详情",
 					"pathName": "pages/main/bozhu/detail",
 					"query": "id=1"
+				},
+				{
+					"id": -1,
+					"name": "话题详情页",
+					"pathName": "pages/huati/huatidetail/huatidetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "音乐详情页",
+					"pathName": "pages/yinyue/yinyuedetail/yinyuedetail",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "播主详情页",
+					"pathName": "pages/main/bozhu/detail",
+					"query": ""
 				}
 			]
 		}

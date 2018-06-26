@@ -92,6 +92,11 @@
   text-align: center;
   border-radius: 20rpx;
 }
+.numWid{
+  width: 40rpx;
+  height: 40rpx;
+  text-align: center;
+}
 .listNum{
   margin-right: 20rpx;
   color: #8386BE;

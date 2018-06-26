@@ -1,1 +1,86 @@
 /* pages/huati/huatidetail/huatidetail.wxss */
+.huatibody{
+  background-color: #1E2033;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.huatitop{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 80rpx;
+}
+.jinghao{
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 50rpx;
+}
+.topic_title{
+  color: #fff;
+  font-size: 40rpx;
+}
+.video_count{
+  color: #B4B4B4;
+  font-size: 30rpx;
+  margin: 20rpx 0;
+}
+.video_hot{
+  color: #50E3C2;
+  font-size: 40rpx;
+  margin: 50rpx 0;
+}
+.shipinLayout{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.huatiShipin{
+  width: 30%;
+  height: 300rpx;
+  margin: 1.4%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+  border-radius: 8rpx;
+}
+.shipinNum{
+  color: #fff;
+  text-shadow: 0 1px 4px #000;
+  margin-left: 15rpx;
+  margin-bottom: 15rpx;
+  flex: auto;
+}
+.zanCount{
+  align-self: flex-start;
+  background-color: #13141F;
+  padding: 10rpx;
+  margin-right: 15rpx;
+  margin-top: 15rpx;
+  border-radius: 10rpx;
+  color: #50E3C2;
+}
+.huatiHeart{
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 12rpx;
+}
+.huatiShare{
+  width: 91%;
+  margin: 80rpx;
+  background: linear-gradient(#6178F3,#7C4FD4);
+  color: #FFFFFF;
+}
+.dataProvide{
+  color: #9B9B9B;
+  font-size: 30rpx;
+  margin-bottom: 60rpx;
+}

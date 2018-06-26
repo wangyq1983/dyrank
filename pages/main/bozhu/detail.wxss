@@ -1,0 +1,134 @@
+.bozhuBody{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  background-color: #1E2033;
+}
+.avatarBox{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 90rpx;
+  position: absolute;
+  top: 80rpx;
+  /* box-shadow: 0 5rpx 5rpx black; */
+}
+.avatar{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 90rpx;  
+}
+.bozhuInfo{
+  margin-top: 170rpx;
+  width: 95%;
+  background: linear-gradient(#5D8BFF,#703ACE);
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.bozhuName{
+  margin-top: 120rpx;
+  color: #50E3C2;
+  font-size: 40rpx;
+}
+.douyinId{
+  margin-top: 20rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+.labels{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.bozhuLabel{
+  border-radius: 30rpx;
+  padding: 10rpx 30rpx;
+  margin: 30rpx;
+  background-color: #7B7BCC;
+  font-size: 30rpx;
+  color: #fff;
+}
+.countInfos{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  font-size: 35rpx;
+  padding-bottom: 50rpx;
+}
+.infoStatistics{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin-top: 30rpx;
+}
+.video_hot{
+  color: #50E3C2;
+  font-size: 40rpx;
+  margin: 50rpx 0;
+}
+.shipinLayout{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.huatiShipin{
+  width: 30%;
+  height: 300rpx;
+  margin: 1.4%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+  border-radius: 8rpx;
+}
+.shipinNum{
+  color: #fff;
+  text-shadow: 0 1px 4px #000;
+  margin-left: 15rpx;
+  margin-bottom: 15rpx;
+  flex: auto;
+}
+.zanCount{
+  align-self: flex-start;
+  background-color: #13141F;
+  padding: 10rpx;
+  margin-right: 15rpx;
+  margin-top: 15rpx;
+  border-radius: 10rpx;
+  color: #50E3C2;
+}
+.huatiHeart{
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 12rpx;
+}
+.huatiShare{
+  width: 91%;
+  margin: 80rpx;
+  background: linear-gradient(#6178F3,#7C4FD4);
+  color: #FFFFFF;
+}
+.dataProvide{
+  color: #9B9B9B;
+  font-size: 30rpx;
+  margin-bottom: 60rpx;
+}
