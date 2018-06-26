@@ -16,11 +16,18 @@ Page({
     listBs:[],
     dataStep:20,
     isEnd:false,
+    timeType:'day', //day or week 
+    time:'',
+    daylist: [],
+    weeklist:[],
+    weeknum:0,
+    dayindex:0,
+    weekindex:0,
     urlApi: app.globalData.zhuboApi.dianzanApi,
     apiType: app.globalData.zhuboApi.dianzanApiType
   },
 
-getUrlApi:function(id){
+  getUrlApi:function(id){
   var dataUrlList = [app.globalData.zhuboApi.dianzanApi,
                       app.globalData.zhuboApi.fensi, 
                       app.globalData.zhuboApi.pinglun, 
@@ -47,11 +54,92 @@ getApiType:function(id){
       list:[],
       isEnd:false
     });
+    if (e.target.dataset.id == 3){
+      this.setData({
+        time: util.YesterDayStr(),
+        daylist: util.dayList()
+      });
+
+      var params = {
+        from: 1,
+        to: this.data.dataStep,
+        timeType: this.data.timeType,
+        time: this.data.time
+      }
+    }else{
+      var params = {
+        from: 1,
+        to: this.data.dataStep
+      }
+    }
+    
+    util.doRequest(this.data.urlApi, params, this.zanList, this.data.apiType);
+  },
+
+  dayPickerChange: function (e) {
+    console.log(e);
+    console.log('picker发送选择改变，携带值为', e.detail.value);
+    this.setData({
+      list: [],
+      dayindex: e.detail.value
+    });
     let params = {
       from: 1,
-      to: this.data.dataStep
+      to: this.data.dataStep,
+      timeType: this.data.timeType,
+      time: this.data.daylist[this.data.dayindex]
     }
     util.doRequest(this.data.urlApi, params, this.zanList, this.data.apiType);
+  },
+
+  weekPickerChange: function (e) {
+    console.log(e);
+    console.log('picker发送选择改变，携带值为', e.detail.value);
+    this.setData({
+      list: [],
+      weekindex: e.detail.value
+    })
+    let params = {
+      from: 1,
+      to: this.data.dataStep,
+      timeType: this.data.timeType,
+      time: this.data.weekindex
+    }
+    util.doRequest(this.data.urlApi, params, this.zanList, this.data.apiType);
+  },
+
+  timeType:function(e){
+    var timeselect = e.currentTarget.dataset.type;
+    console.log(e.currentTarget.dataset.type);
+    this.setData({
+      list:[],
+      timeType: timeselect
+    });
+    if (timeselect == "day"){
+      this.setData({
+        time: util.YesterDayStr(),
+        daylist: util.dayList()
+      });
+      let params = {
+        from: 1,
+        to: this.data.dataStep,
+        timeType: this.data.timeType,
+        time: this.data.time
+      }
+      util.doRequest(this.data.urlApi, params, this.zanList, this.data.apiType);
+    } else if (timeselect == "week"){
+      this.setData({
+        time: util.LastWeekStr(),
+        weeklist: util.weekList()
+      })
+      let params = {
+        from: 1,
+        to: this.data.dataStep,
+        timeType: this.data.timeType,
+        time: this.data.weeknum
+      }
+      util.doRequest(this.data.urlApi, params, this.zanList, this.data.apiType);
+    }
   },
 
   //ajax方法的回调函数
