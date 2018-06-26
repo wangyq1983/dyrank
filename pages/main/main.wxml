@@ -6,6 +6,7 @@
     <view class='sub_menu_item {{sub_menu_cur==3?"cur":""}}' data-id='3' bindtap='menuFunc'>飙升</view>
   </view> 
 
+<!--点赞列表  -->
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 0}}">
     <view class='top3'>
       <view class='secondBozhu' bindtap='gotoZozhuDetail' data-id="{{list[1].id}}">
@@ -62,6 +63,7 @@
     </view>
   </scroll-view>
 
+<!--粉丝列表  -->
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 1}}">
     <view class='top3'>
       <view class='secondBozhu' bindtap='gotoZozhuDetail' data-id="{{list[1].id}}">
@@ -118,6 +120,7 @@
     </view>
   </scroll-view>
 
+<!--评论列表  -->
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 2}}">
     <view class='top3'>
       <view class='secondBozhu' bindtap='gotoZozhuDetail' data-id="{{list[1].id}}">
@@ -174,7 +177,35 @@
     </view>
   </scroll-view>
 
+<!--飙升列表  -->
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 3}}">
+    <view class='biaoshengBox'>
+      <view class='timeType'>时间:
+        <view class='{{timeType == "day"?"cur":"item"}}' data-type='day' bindtap='timeType'>日榜</view>
+        <view class='{{timeType == "week"?"cur":"item"}}' data-type='week' bindtap='timeType'>周榜</view>
+      </view>
+      <view>
+      <!-- <view class='timeSelect' bindtap='timeSelect' >
+        {{time}}
+      </view> -->
+
+      <picker bindchange="dayPickerChange" value="{{dayindex}}" range="{{daylist}}" wx:if="{{timeType == 'day'}}">
+        <view class="picker">
+          {{daylist[dayindex]}}
+          <view class='arraw_down'></view>
+        </view>
+      </picker>
+      
+      <picker bindchange="weekPickerChange" value="{{weekindex}}" range="{{weeklist}}" wx:if="{{timeType == 'week'}}">
+        <view class="picker">
+          {{weeklist[weekindex]}}
+          <view class='arraw_down'></view>
+        </view>
+      </picker>
+
+
+      </view> 
+    </view>
     <view class='top3'>
       <view class='secondBozhu' bindtap='gotoZozhuDetail' data-id="{{list[1].id}}">
       <view class='topImgBox'>
