@@ -10,7 +10,8 @@
     "pages/shipin/shipin",
     "pages/logs/logs",
     "pages/main/bozhu/detail",
-    "pages/bar/index"
+    "pages/bar/index",
+    "pages/diff/diff"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -45,7 +46,7 @@
         "selectedIconPath": "images/shipin_selected.png"
       },
       {
-        "pagePath": "pages/main/main",
+        "pagePath": "pages/diff/diff",
         "text": "我们不一样",
         "iconPath": "images/buyang.png",
         "selectedIconPath": "images/buyang_selected.png"
