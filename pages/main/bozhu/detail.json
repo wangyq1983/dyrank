@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "抖音主播排行榜"
+  "navigationBarTitleText": "抖音主播排行榜",
+  "usingComponents": {
+    "ec-canvas": "../../../ec-canvas/ec-canvas"
+  }
 }

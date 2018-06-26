@@ -10,100 +10,97 @@ function initChart(canvas, width, height) {
   canvas.setChart(chart);
 
   var option = {
-    color: ['#37a2da', '#32c5e9', '#67e0e3'],
     tooltip: {
       trigger: 'axis',
-      axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-        type: 'line'        // 默认为直线，可选为：'line' | 'shadow'
+      axisPointer: {
+        type: 'cross',
+        crossStyle: {
+          color: '#0ff'
+        }
       }
     },
-    legend: {
-      data: ['热度', '正面', '负面']
+    toolbox: {
+      // feature: {
+      //   dataView: { show: true, readOnly: false },
+      //   magicType: { show: true, type: ['line', 'bar'] },
+      //   restore: { show: true },
+      //   saveAsImage: { show: true }
+      // }
     },
-    grid: {
-      left: 20,
-      right: 20,
-      bottom: 115,
-      top: 40,
-      containLabel: true
+    legend: {
+      data: ['蒸发量', '降水量', '平均温度']
     },
     xAxis: [
       {
         type: 'category',
-        axisLine: {
-          lineStyle: {
-            color: '#999'
-          }
-        },
-        axisLabel: {
-          color: '#666'
+        data: ['5/12', '5/13', '5/14', '5/15', '5/16', '5/17', '5/18'],
+        axisPointer: {
+          type: 'shadow'
         }
       }
     ],
     yAxis: [
       {
         type: 'value',
-        axisTick: { show: false },
-        data: ['汽车之家', '今日头条', '百度贴吧', '一点资讯', '微信', '微博', '知乎'],
-        axisLine: {
-          lineStyle: {
-            color: '#999'
-          }
-        },
+        name: '水量',
+        min: 0,
+        max: 250,
+        interval: 50,
         axisLabel: {
-          color: '#666'
+          formatter: '{value} ml'
+        }
+      },
+      {
+        type: 'value',
+        name: '温度',
+        min: 0,
+        max: 25,
+        interval: 5,
+        axisLabel: {
+          formatter: '{value} °C'
         }
       }
     ],
     series: [
       {
-        name: '热度',
+        name: '蒸发量',
         type: 'bar',
-        label: {
-          normal: {
-            show: true,
-            position: 'inside'
-          }
+        barWidth: 10,
+        barBorderRadius: 50,
+        itemStyle:{
+          normal:{
+            color: '#50E3C2', 
+            barBorderRadius: [10, 10, 10, 10],
+          },
         },
-        data: [300, 270, 340, 344, 300, 320, 310],
-        itemStyle: {
-          // emphasis: {
-          //   color: '#37a2da'
-          // }
-        }
+        data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6]
       },
       {
-        name: '正面',
+        name: '降水量',
         type: 'bar',
-        stack: '总量',
-        label: {
-          normal: {
-            show: true
-          }
-        },
-        data: [120, 102, 141, 174, 190, 250, 220],
+        barWidth: 10,
         itemStyle: {
-          // emphasis: {
-          //   color: '#32c5e9'
-          // }
-        }
+          normal: {
+            color: '#00A0FA',
+            barBorderRadius: [10, 10, 10, 10]
+          },
+        },
+        data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6]
       },
       {
-        name: '负面',
-        type: 'bar',
-        stack: '总量',
-        label: {
-          normal: {
-            show: true,
-            position: 'left'
-          }
+        name: '平均温度',
+        type: 'line',
+        yAxisIndex: 1,
+        symbolSize:20,
+        smooth:false,
+        symbol: 'circle', 
+        color:'#00A0FA',
+        lineStyle:{
+          type:'solid',
+          color:'#50E3C2',
+          width:6
         },
-        data: [-20, -32, -21, -34, -90, -130, -110],
-        itemStyle: {
-          // emphasis: {
-          //   color: '#67e0e3'
-          // }
-        }
+        data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3]
       }
     ]
   };
