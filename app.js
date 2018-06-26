@@ -74,5 +74,11 @@ App({
       biaosheng: webhost + "musicRise",
       biaoshengType: "vRise"
     },
+    diffApi: {
+      dianzanApi: webhost + "special",
+      dianzanApiType: "feature",
+      detail: webhost + "specialDetail",
+      detailType: "special"
+    },
   }
 })
