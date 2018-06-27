@@ -7,7 +7,7 @@
   align-items: center;
   background-color: #1E2033;
 }
-.listStyle1{
+.listStyle4{
   margin: 10rpx 20rpx;
   font-size: 30rpx;
   display: flex;
@@ -17,6 +17,9 @@
   align-items: center;
   padding: 5rpx 20rpx;
   background-color: #222537;
+  height:120rpx;
+  box-sizing:border-box;
+  border-radius:8rpx
 }
 .listNum{
   margin-right: 25rpx;
@@ -53,12 +56,12 @@
   color: #fff;
   margin: 100rpx 0;
 }
-.listStyle1:nth-child(1){
+.listStyle4:nth-child(1){
   background: linear-gradient(#FFA12F,#FF623B);
 }
-.listStyle1:nth-child(2){
+.listStyle4:nth-child(2){
   background: linear-gradient(#00CFE3,#00ADF4);
 }
-.listStyle1:nth-child(3){
+.listStyle4:nth-child(3){
   background: linear-gradient(#587EFB,#8A2EFE);
 }

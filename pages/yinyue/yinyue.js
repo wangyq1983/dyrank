@@ -9,23 +9,32 @@ Page({
   data: {
     sub_menu_cur: 0,
     list: [],
+    listThree: [],
+    listOther: [],
     listFs: [],
     listPl: [],
     listBs: [],
     dataStep: 20,
     isEnd: false,
-    urlApi: app.globalData.yinyueApi.zuireApi,
-    apiType: app.globalData.yinyueApi.zuireApiType
+    timeType: 'day', //day or week 
+    time: '',
+    daylist: [],
+    weeklist: [],
+    weeknum: 0,
+    dayindex: 0,
+    weekindex: 0,
+    urlApi: app.globalData.yinyueApi.dianzanApi,
+    apiType: app.globalData.yinyueApi.dianzanApiType
   },
 
   getUrlApi: function (id) {
-    var dataUrlList = [app.globalData.yinyueApi.zuireApi,
+    var dataUrlList = [app.globalData.yinyueApi.dianzanApi,
       app.globalData.yinyueApi.biaosheng]
     return dataUrlList[id];
   },
 
   getApiType: function (id) {
-    var dataTypeList = [app.globalData.yinyueApi.huatiApiType,
+    var dataTypeList = [app.globalData.yinyueApi.dianzanApiType,
       app.globalData.yinyueApi.biaoshengType]
     return dataTypeList[id];
   },
@@ -41,31 +50,120 @@ Page({
       list: [],
       isEnd: false
     });
+    if (e.target.dataset.id == 1) {
+      this.setData({
+        time: util.YesterDayStr(),
+        daylist: util.dayList()
+      });
+
+      var params = {
+        from: 1,
+        to: this.data.dataStep,
+        timeType: this.data.timeType,
+        time: this.data.time
+      }
+    } else {
+      var params = {
+        from: 1,
+        to: this.data.dataStep
+      }
+    }
+
+    util.doRequest(this.data.urlApi, params, this.zanList, this.data.apiType);
+  },
+
+  dayPickerChange: function (e) {
+    console.log(e);
+    console.log('picker发送选择改变，携带值为', e.detail.value);
+    this.setData({
+      list: [],
+      dayindex: e.detail.value
+    });
     let params = {
       from: 1,
-      to: this.data.dataStep
+      to: this.data.dataStep,
+      timeType: this.data.timeType,
+      time: this.data.daylist[this.data.dayindex]
     }
     util.doRequest(this.data.urlApi, params, this.zanList, this.data.apiType);
   },
 
-  //点赞列表 
+  weekPickerChange: function (e) {
+    console.log(e);
+    console.log('picker发送选择改变，携带值为', e.detail.value);
+    this.setData({
+      list: [],
+      weekindex: e.detail.value
+    })
+    let params = {
+      from: 1,
+      to: this.data.dataStep,
+      timeType: this.data.timeType,
+      time: this.data.weekindex
+    }
+    util.doRequest(this.data.urlApi, params, this.zanList, this.data.apiType);
+  },
+
+  timeType: function (e) {
+    var timeselect = e.currentTarget.dataset.type;
+    console.log(e.currentTarget.dataset.type);
+    this.setData({
+      list: [],
+      timeType: timeselect
+    });
+    if (timeselect == "day") {
+      this.setData({
+        time: util.YesterDayStr(),
+        daylist: util.dayList()
+      });
+      let params = {
+        from: 1,
+        to: this.data.dataStep,
+        timeType: this.data.timeType,
+        time: this.data.time
+      }
+      util.doRequest(this.data.urlApi, params, this.zanList, this.data.apiType);
+    } else if (timeselect == "week") {
+      this.setData({
+        time: util.LastWeekStr(),
+        weeklist: util.weekList()
+      })
+      let params = {
+        from: 1,
+        to: this.data.dataStep,
+        timeType: this.data.timeType,
+        time: this.data.weeknum
+      }
+      util.doRequest(this.data.urlApi, params, this.zanList, this.data.apiType);
+    }
+  },
+
+  //ajax方法的回调函数
   zanList: function (res) {
     console.log(this.data.list)
     console.log(res)
     this.setData({
       list: this.data.list.concat(res)
     });
-    if (res == 0) {
+    console.log('list is');
+    console.log(this.data.list);
+    var three = this.data.list.slice(0, 2);
+    var other = this.data.list.slice(3);
+    this.setData({
+      listThree: three,
+      listOther: other
+    });
+    if (res.length == 0) {
       this.setData({
         isEnd: true
       });
     };
-    console.log(res[1])
   },
 
   gotoZozhuDetail: function (e) {
     console.log(e.currentTarget.dataset.id);
     let id = e.currentTarget.dataset.id
+    console.log('id=' + id);
     wx.navigateTo({
       url: "yinyuedetail/yinyuedetail?id=" + id
     })
@@ -86,7 +184,7 @@ Page({
       from: 1,
       to: this.data.dataStep
     }
-    util.doRequest(this.data.urlApi, params, this.zanList, app.globalData.yinyueApi.zuireApiType)
+    util.doRequest(this.data.urlApi, params, this.zanList, app.globalData.yinyueApi.dianzanApiType)
   },
 
   /**

@@ -59,8 +59,8 @@ App({
       detailType: "topic"
     },
     yinyueApi: {
-      zuireApi: webhost + "musicHottest",
-      zuireApiType: "mHottest",
+      dianzanApi: webhost + "musicHottest",
+      dianzanApiType: "mHottest",
       biaosheng: webhost + "musicRise",
       biaoshengType: "mRise",
       detail: webhost + "musicDetail",
@@ -71,7 +71,7 @@ App({
       dianzanApiType: "vLike",
       pinglunApi: webhost + "video",
       pinglunApiType: "vComment",
-      biaosheng: webhost + "musicRise",
+      biaosheng: webhost + "videoRise",
       biaoshengType: "vRise"
     },
     diffApi: {

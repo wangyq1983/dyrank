@@ -5,7 +5,7 @@
   </view> 
 
   <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 0}}">
-    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='gotoZozhuDetail' data-id="{{item.id}}">
+    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle4' bindtap='gotoZozhuDetail' data-id="{{item.id}}">
       <text class='listNum numBg' wx:if="{{index < 3}}">{{index+1}}</text>
       <text class='listNum numWid' wx:if="{{index >= 3}}">{{index+1}}</text>      
       <image class='listMusicImg' src='{{item.music_url}}'></image>
@@ -18,14 +18,56 @@
     </view>
   </scroll-view>
 
-  <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 1}}">
-    <view wx:for="{{list}}" wx:key="{{index}}" class='listStyle1' bindtap='gotoZozhuDetail' data-id='{{item.id}}'>
-      <text class='listNum numBg' wx:if="{{index < 3}}">{{index+1}}</text>
-      <text class='listNum numWid' wx:if="{{index >= 3}}">{{index+1}}</text>
-      <image class='listMusicImg' src='{{item.music_url}}'></image>
+  <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 1}}">    
+    <view class='top3'>
+      <view class='secondBozhu' bindtap='gotoZozhuDetail' data-id="{{list[1].id}}">
+      <view class='topImgBox'>
+        <image src='../../images/crown2.png' class='crow2'></image>
+        <image src='{{list[1].music_url}}' class='secondImg'></image>
+        <text class='secondNum'>2</text>
+      </view>
+      <view class='topNickName'>🎵{{list[1].music_name}}</view>
+      <view class='topCount'>
+        <image src='../../images/TV_black.png' style='width:16rpx; height:16rpx;'></image>
+        <text class='topCommentCount'>{{list[1].rise_value}}</text>
+      </view>
+      </view>
+      <view class='firstBozhu' bindtap='gotoZozhuDetail' data-id="{{list[0].id}}">
+      <view class='firstImgBox'>
+        <image src='../../images/crown1.png' class='crow1'></image>
+        <image src='{{list[0].music_url}}' class='firstImg'></image>
+        <text class='firstNum'>1</text>
+      </view>
+      <view class='topNickName'>🎵{{list[0].music_name}}</view>
+      <view class='topCount'>
+        <image src='../../images/TV_black.png' style='width:16rpx; height:16rpx;'></image>
+        <text class='topCommentCount'>{{list[0].rise_value}}</text>
+      </view>
+      </view>
+      <view class='thirdBozhu' bindtap='gotoZozhuDetail' data-id="{{list[2].id}}">
+      <view class='topImgBox'>
+        <image src='../../images/crown3.png' class='crow2'></image>
+        <image src='{{list[2].music_url}}' class='secondImg'></image>
+        <text class='thirdNum'>3</text>
+      </view>
+      <view class='topNickName'>🎵{{list[2].music_name}}</view>
+      <view class='topCount'>
+        <image src='../../images/TV_black.png' style='width:16rpx; height:16rpx;'></image>
+        <text class='topCommentCount'>{{list[2].rise_value}}</text>
+      </view>
+      </view>
+    </view>
+    <view wx:for="{{listOther}}" wx:key="{{index}}" class='listStyle1 zanL' bindtap='gotoZozhuDetail' data-id="{{item.id}}">
+    <view class='itemLeft'>
+      <text class='listNum'>{{index+4}}</text>
+      <image src='{{item.music_url}}' class='iconImg'></image>
       <text class='listName'>🎵{{item.music_name}}</text>
-      <view class='listTV' wx:if="{{index < 3}}"><image class='TV_img' src='../../images/TV_white.png'></image>{{item.rise_value}}</view>
-      <view class='listTV' wx:if="{{index >= 3}}"><image class='TV_img' src='../../images/TV_black.png'></image>{{item.rise_value}}</view>
+    </view>
+      <view>
+        <image src='../../images/TV_black.png' style='width:20rpx; height:20rpx;'></image>
+        <text class='zanCount'>{{item.rise_value}}</text>
+      </view>
+      
     </view>
     <view wx:if="{{isEnd == true}}" class='listEnd'> 
       已经到底了

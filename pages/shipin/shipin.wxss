@@ -9,13 +9,15 @@
   background-color: #1E2033;
 }
  .listStyle2{
+  width: 30%;
+  height: 300rpx;
+  margin: 1.4%;
   display: inline-flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-start;
-  align-items: flex-start;
-  width: 33.333333333%;  
-  height: 360rpx; 
+  align-items: flex-end;
+  border-radius: 8rpx;
 } 
 .listNum{
   background-color: red;
@@ -43,4 +45,25 @@
   align-content: center;
   color: #fff;
   margin: 100rpx 0;
+}
+.shipinNum{
+  color: #fff;
+  text-shadow: 0 1px 4px #000;
+  margin-left: 15rpx;
+  margin-bottom: 15rpx;
+  flex: auto;
+}
+.zanCount{
+  align-self: flex-start;
+  background-color: #13141F;
+  padding: 10rpx;
+  margin-right: 15rpx;
+  margin-top: 15rpx;
+  border-radius: 10rpx;
+  color: #50E3C2;
+}
+.huatiHeart{
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 12rpx;
 }
