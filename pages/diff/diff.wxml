@@ -1,2 +1,46 @@
-<!--pages/diff/diff.wxml-->
-<text>pages/diff/diff.wxml</text>
+<view>
+   <view class='sub_menu_box'>
+    <view wx:for="{{list}}" wx:key="{{index}}" class='sub_menu_item' bindtap='menuFunc'>{{list[index].special_title}}</view>    
+  </view> 
+
+  <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 0}}">
+    <image src='{{list[0].special_banner}}' class='diffBanner'></image>
+    
+    <view class='classification'>      
+      <view class='diffAdd'>
+        <image src='../../images/Shapex.png' class='shapex'></image>
+        <text>甜品店</text>
+        <text class='diffWan'>1221W ></text>
+      </view>
+      <view class='shipinLayout'>      
+        <view class='huatiShipin' style='background:url(../../images/timg.png);background-size:100% 100%'>      
+          <text class='shipinNum'>01</text>      
+          <view class='zanCount'>
+            <text>265w</text>
+            <image src='../../images/heart.png' class='huatiHeart'></image>
+          </view>      
+        </view>
+
+        <view class='huatiShipin' style='background:url(../../images/timg.png);background-size:100% 100%'>      
+          <text class='shipinNum'>01</text>      
+          <view class='zanCount'>
+            <text>265w</text>
+            <image src='../../images/heart.png' class='huatiHeart'></image>
+          </view>      
+        </view>
+
+        <view class='huatiShipin' style='background:url(../../images/timg.png);background-size:100% 100%'>      
+          <text class='shipinNum'>01</text>      
+          <view class='zanCount'>
+            <text>265w</text>
+            <image src='../../images/heart.png' class='huatiHeart'></image>
+          </view>      
+        </view>
+      </view>      
+    </view>    
+    <view wx:if="{{isEnd == true}}" class='listEnd'> 
+      已经到底了
+    </view>
+  </scroll-view>
+ 
+</view>

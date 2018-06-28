@@ -2,6 +2,7 @@
 // var webhost = 'http://api-dev.jiyoushe.cn/v2/';
 // var webhost = "http://192.168.101.226:8061/";
 var webhost = "http://192.168.100.251:8061/";
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -66,9 +67,8 @@ App({
       biaoshengType: "mRise",
       detail: webhost + "musicDetail",
       detailType: "music"
-    },
-    shipinApi: {
-      dianzanApi: webhost + "video",
+    },      
+    shipinApi: {dianzanApi: webhost + "video",
       dianzanApiType: "vLike",
       pinglunApi: webhost + "video",
       pinglunApiType: "vComment",
@@ -77,7 +77,9 @@ App({
     },
     diffApi: {
       dianzanApi: webhost + "special",
-      dianzanApiType: "feature",
+      dianzanApiType: "title",
+      oneSpecialApi: "oneSpecial",
+      oneSpecialApiType: "feature",
       detail: webhost + "specialDetail",
       detailType: "special"
     },

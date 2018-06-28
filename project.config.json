@@ -29,14 +29,8 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 6,
 			"list": [
-				{
-					"id": -1,
-					"name": "话题",
-					"pathName": "pages/huati/huati",
-					"query": ""
-				},
 				{
 					"id": -1,
 					"name": "音乐",
@@ -74,15 +68,21 @@
 					"query": "id=1"
 				},
 				{
-					"id": -1,
+					"id": 6,
 					"name": "不一样",
 					"pathName": "pages/diff/diff",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "测试",
-					"pathName": "pages/test/test",
+					"name": "专题详情",
+					"pathName": "pages/diff/diffdetail/detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "话题",
+					"pathName": "pages/huati/huati",
 					"query": ""
 				}
 			]

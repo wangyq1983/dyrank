@@ -118,7 +118,7 @@
 .listName{
   margin-left: 39rpx;
   color: #fff;
-  max-width: 180rpx;
+  max-width: 250rpx;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -188,7 +188,7 @@
   font-size:30rpx;
   font-family:PingFangSC-Medium;
   color:rgba(80,227,194,1);
-  width:150rpx;
+  width:165rpx;
   line-height:42rpx;
   overflow: hidden;
   white-space: nowrap;

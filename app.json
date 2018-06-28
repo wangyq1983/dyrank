@@ -1,6 +1,5 @@
 {
   "pages":[
-
     "pages/main/main",
     "pages/index/index",
     "pages/huati/huati",
@@ -11,7 +10,8 @@
     "pages/logs/logs",
     "pages/main/bozhu/detail",
     "pages/bar/index",
-    "pages/diff/diff"
+    "pages/diff/diff",
+    "pages/diff/diffdetail/detail"
   ],
   "window":{
     "backgroundTextStyle":"light",

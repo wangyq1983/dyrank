@@ -34,7 +34,7 @@
 .listName{
   margin-left: 15rpx;
   color: #fff;
-  max-width: 380rpx;
+  max-width: 370rpx;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
