@@ -39,6 +39,7 @@
 }
 .listEnd{
   display: flex;
+  display: -webkit-flex; /* Safari */
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;

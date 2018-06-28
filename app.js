@@ -1,6 +1,7 @@
 //app.js
 // var webhost = 'http://api-dev.jiyoushe.cn/v2/';
-var webhost = "http://192.168.101.226:8061/";
+// var webhost = "http://192.168.101.226:8061/";
+var webhost = "http://192.168.100.251:8061/";
 App({
   onLaunch: function () {
     // 展示本地存储能力
