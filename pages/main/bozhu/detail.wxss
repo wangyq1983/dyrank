@@ -141,6 +141,7 @@
   line-height:42rpx;
   font-size:30rpx;
   margin-top: 35rpx;
+  margin-bottom:20rpx;
 }
 .echartCon{
   width:100%;

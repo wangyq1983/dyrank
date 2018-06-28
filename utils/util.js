@@ -280,6 +280,28 @@ const dayList = () => {
 }
 
 /**
+ * 返回数据表需要的日期格式
+ */
+const chartDayList = () => {
+  var daylists = new Array();
+  for (var i = 1; i < 8; i++) {
+    var date = GetDate(i, 1);       //当前时间前一天
+    console.log('date=' + date)
+    var returnStr = "";
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    month = month < 10 ? "0" + month : month;
+    day = day < 10 ? "0" + day : day;
+    returnStr = month + "-" + day;
+    daylists.push(returnStr)
+    // return returnStr;
+  }
+  console.log(daylists);
+  return daylists.reverse();
+}
+
+/**
  * 返回周榜时间列表
  */
 const weekList = () =>{
@@ -290,6 +312,7 @@ const weekList = () =>{
   }
   return daylists;
 }
+
 
 
 /**
@@ -347,5 +370,6 @@ module.exports = {
   LastWeekStr: LastWeekStr,
   YesterDayStr: YesterDayStr,
   dayList:dayList,
-  weekList:weekList
+  weekList:weekList,
+  chartDayList: chartDayList
 }

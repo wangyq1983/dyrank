@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
@@ -71,7 +71,7 @@
 					"id": 6,
 					"name": "播主详情页",
 					"pathName": "pages/main/bozhu/detail",
-					"query": ""
+					"query": "id=1"
 				},
 				{
 					"id": -1,
