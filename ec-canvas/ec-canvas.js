@@ -12,7 +12,11 @@ Component({
 
     ec: {
       type: Object
-    }
+    },
+
+    // datalist:{
+    //   type: Object
+    // }
   },
 
   data: {

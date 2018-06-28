@@ -3,12 +3,6 @@ const app = getApp();
 
 import * as echarts from '../../../ec-canvas/echarts';
 
-
-
-
-
-
-
 Page({
 
   /**
@@ -17,18 +11,91 @@ Page({
   data: {
     dataCon:{},
     ec: {
-      
+      // onInit: initChart
+      lazyLoad: true
     },
   },
 
-  initChart: function (canvas, width, height,obj){
-    var chart = echarts.init(canvas, null, {
-      width: width,
-      height: height
+  //详情渲染
+  zanDetail: function (res) {
+    console.log('res');
+    console.log(res);
+    this.setData({
+      dataCon:res,
     });
-    canvas.setChart(chart);
+    wx.setNavigationBarTitle({
+      title: "播主"+res.nickname
+    })
+    this.barComponent = this.selectComponent('#mychart-dom-bar');
+    this.init_bar();
+  },
+  //复制路径到剪贴板
+  copyPath:function(e){
+    wx.showModal({
+      title: '提示',
+      confirmText:'复制链接',
+      content: '点击“复制链接”按钮，粘贴到手机浏览器中打开',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定');
+          wx.setClipboardData({
+            data: e.currentTarget.dataset.path,
+            success: function () {
+              console.log('复制成功');
+              // wx.getClipboardData({
+              //   success: function (res) {
+              //     console.log(res.data) // data
+              //   }
+              // })
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    });
 
-    var option = {
+    console.log(e.currentTarget.dataset.path);
+    
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    console.log(options);
+    var params ={
+      id:options.id
+    };
+    util.doRequest(app.globalData.zhuboApi.detail, params, this.zanDetail, app.globalData.zhuboApi.detailType);
+  },
+
+  init_bar:function(){
+    //初始化图表
+    this.barComponent.init((canvas, width, height) => {
+      // 初始化图表
+      const barChart = echarts.init(canvas, null, {
+        width: width,
+        height: height
+      });
+      barChart.setOption(this.getBarOption());
+      // 注意这里一定要返回 chart 实例，否则会影响事件处理等
+      return barChart;
+    });
+  },
+  getBarOption:function(){
+
+    var commitMax = util.maxAxis(this.data.dataCon.comment_counts);
+    var likeMax = util.maxAxis(this.data.dataCon.like_counts);
+    var commitInterval = util.intervalNum(this.data.dataCon.comment_counts);
+    var likeInterval = util.intervalNum(this.data.dataCon.like_counts);
+    
+    console.log('commitMax' + commitMax);
+    console.log('likeMax' + likeMax);
+    console.log('commitInterval' + commitInterval);
+    console.log('likeInterval' + likeInterval);
+    // console.log('testnum' + testnum);
+
+    return {
       tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -73,10 +140,22 @@ Page({
           type: 'value',
           name: '点赞量',
           min: 0,
-          max: 334411,
-          interval: 50000,
+          max: likeMax,
+          interval: likeInterval,
           axisLabel: {
-            formatter: '{value}w'
+            formatter: function(value){
+              var dzl = [];
+              // console.log('value');
+              // console.log(value);
+              // console.log(typeof value);
+              if(value > 9999){
+                var value1 = Math.round(value/10000)+'w';
+              }else{
+                var value1 = value;
+              }
+              dzl.push(value1);
+              return dzl;
+            }
           },
           axisLine: {
             lineStyle: {
@@ -89,10 +168,22 @@ Page({
           type: 'value',
           name: '评论量',
           min: 0,
-          max: 334411,
-          interval: 50000,
+          max: commitMax,
+          interval: commitInterval,
           axisLabel: {
-            formatter: '{value}w'
+            formatter: function (value) {
+              var dzl = [];
+              // console.log('value');
+              // console.log(value);
+              // console.log(typeof value);
+              if (value > 9999) {
+                var value1 = Math.round(value / 10000) + 'w';
+              } else {
+                var value1 = value;
+              }
+              dzl.push(value1);
+              return dzl;
+            }
           },
           axisLine: {
             lineStyle: {
@@ -114,7 +205,7 @@ Page({
               barBorderRadius: [10, 10, 10, 10],
             },
           },
-          data: obj.comment_counts
+          data: this.data.dataCon.like_counts
         },
         {
           name: '评论量',
@@ -126,71 +217,11 @@ Page({
               barBorderRadius: [10, 10, 10, 10]
             },
           },
-          data: ["1000", "51000", "101000", "151000", "201000", "251000", "301000"]
+          data: this.data.dataCon.comment_counts
         },
       ]
-    };
-
-    chart.setOption(option);
-    return chart;
+    }
   },
-
-  //详情渲染
-  zanDetail: function (res) {
-    console.log('res');
-    console.log(res);
-    
-
-    this.setData({
-      dataCon:res,
-      ec:{
-        onInit: this.initChart('','100%','',res)
-      }
-    });
-    wx.setNavigationBarTitle({
-      title: "播主"+res.nickname
-    })
-  },
-  //复制路径到剪贴板
-  copyPath:function(e){
-    wx.showModal({
-      title: '提示',
-      confirmText:'复制链接',
-      content: '点击“复制链接”按钮，粘贴到手机浏览器中打开',
-      success: function (res) {
-        if (res.confirm) {
-          console.log('用户点击确定');
-          wx.setClipboardData({
-            data: e.currentTarget.dataset.path,
-            success: function () {
-              console.log('复制成功');
-              // wx.getClipboardData({
-              //   success: function (res) {
-              //     console.log(res.data) // data
-              //   }
-              // })
-            }
-          })
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    });
-
-    console.log(e.currentTarget.dataset.path);
-    
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    console.log(options);
-    var params ={
-      id:options.id
-    };
-    util.doRequest(app.globalData.zhuboApi.detail, params, this.zanDetail, app.globalData.zhuboApi.detailType)
-  },
-
   shareTest:function(){
     console.log(12)
     wx.showShareMenu({
