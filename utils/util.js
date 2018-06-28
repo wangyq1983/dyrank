@@ -313,7 +313,22 @@ const weekList = () =>{
   return daylists;
 }
 
+/**
+ * 返回图表最大值
+ */
+const maxAxis = (arr) =>{
+  var maxNum = Number(Math.max.apply(null, arr));
+  return maxNum;
+}
 
+const etest = (arr) =>{
+  return arr[0]
+}
+
+const intervalNum = (arr) =>{
+  var interval = Number(Math.max.apply(null, arr))/10;
+  return interval;
+}
 
 /**
  * 重新封装的ajax请求方法
@@ -371,5 +386,8 @@ module.exports = {
   YesterDayStr: YesterDayStr,
   dayList:dayList,
   weekList:weekList,
-  chartDayList: chartDayList
+  chartDayList: chartDayList,
+  maxAxis: maxAxis,
+  intervalNum: intervalNum,
+  etest:etest
 }

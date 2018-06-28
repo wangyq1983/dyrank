@@ -4,6 +4,10 @@
     <text class='topic_title'>{{dataCon.topic_title}}</text>
     <text class='video_count'>话题视频总量{{dataCon.video_count}}</text>    
   </view>  
+  <view class='chartTitle'>最近一周数据表现</view>
+  <view class='echartCon'>
+    <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  </view>
   <text class='video_hot'>话题最热视频</text>  
   <view class='shipinLayout'>
     <view wx:for="{{dataCon.videoList}}" wx:key="{{index}}" class='huatiShipin' style='background:url({{item.cover_url}});background-size:100% 100%'>      
