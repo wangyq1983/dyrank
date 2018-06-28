@@ -1,11 +1,19 @@
 <!--pages/yinyue/yinyuedetail/yinyuedetail.wxml-->
 <view class='huatibody'>  
   <view class='huatitop'>
-    <image src='../../../images/jinghao.png' class='jinghao'></image>
+    <view class='music_url'>
+      <image src='{{dataCon.music_url}}' class='jinghao'></image>
+      <image src='../../../images/play.png' class='yinyuePlay' wx:if="{{yinyueStatus=='play'}}" bindtap="audioPlay"></image>
+      <image src='../../../images/time_out.png' class='yinyueTimeout' wx:if="{{yinyueStatus=='timeout'}}"  bindtap="audioPause"></image>
+    </view>
     <text class='topic_title'>{{dataCon.music_name}}</text>
     <text class='video_count'>音乐视频总量{{dataCon.video_count}}</text>    
-  </view>  
-  <text class='video_hot'>话题最热视频</text>  
+  </view>
+  <!-- 音乐播放test   -->
+  <!-- audio.wxml -->
+  <audio src="{{dataCon.music_play}}" id="myAudio" bindended='playEnd'></audio>  
+
+  <text class='video_hot'>音乐最热视频</text>  
   <view class='shipinLayout'>
     <view wx:for="{{dataCon.videoList}}" wx:key="{{index}}" class='huatiShipin' style='background:url({{item.cover_url}});background-size:100% 100%'>      
       <text class='shipinNum' wx:if="{{index < 10}}">0{{index+1}}</text>

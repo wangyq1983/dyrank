@@ -2,27 +2,45 @@
 .huatibody{
   background-color: #1E2033;
   display: flex;
+  display: -webkit-flex; /* Safari */
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
 }
 .huatitop{
+  display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
   padding-top: 80rpx;
+  width: 100%;
+}
+.music_url{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 200rpx;
+  margin-bottom: 50rpx;
+  border-width: 35rpx;
+  border-style: solid;
+  border-color: rgba(131, 134, 190, 0.3);
+  position: relative;
 }
 .jinghao{
-  width: 120rpx;
-  height: 120rpx;
-  margin-bottom: 50rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100rpx;
 }
 .topic_title{
   color: #fff;
   font-size: 40rpx;
+  width: 80%;
+  text-align: center;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .video_count{
   color: #B4B4B4;
@@ -35,6 +53,7 @@
   margin: 50rpx 0;
 }
 .shipinLayout{
+  display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -45,6 +64,7 @@
   width: 30%;
   height: 300rpx;
   margin: 1.4%;
+  display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -83,4 +103,11 @@
   color: #9B9B9B;
   font-size: 30rpx;
   margin-bottom: 60rpx;
+}
+.yinyuePlay, .yinyueTimeout{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 60rpx;
+  left: 60rpx;
 }

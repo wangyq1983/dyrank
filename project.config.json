@@ -78,6 +78,12 @@
 					"name": "不一样",
 					"pathName": "pages/diff/diff",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "测试",
+					"pathName": "pages/test/test",
+					"query": ""
 				}
 			]
 		}

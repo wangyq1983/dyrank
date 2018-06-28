@@ -18,7 +18,7 @@
       <view class='topNickName'>{{list[1].nickname}}</view>
       <view class='topCount'>
         <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
-        <text class='topCommentCount'>{{list[1].comment_count}}</text>
+        <text class='topCommentCount'>{{list[1].like_count}}</text>
       </view>
       </view>
       <view class='firstBozhu' bindtap='gotoZozhuDetail' data-id="{{list[0].id}}">
@@ -30,7 +30,7 @@
       <view class='topNickName'>{{list[0].nickname}}</view>
       <view class='topCount'>
         <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
-        <text class='topCommentCount'>{{list[0].comment_count}}</text>
+        <text class='topCommentCount'>{{list[0].like_count}}</text>
       </view>
       </view>
       <view class='thirdBozhu' bindtap='gotoZozhuDetail' data-id="{{list[2].id}}">
@@ -42,7 +42,7 @@
       <view class='topNickName'>{{list[2].nickname}}</view>
       <view class='topCount'>
         <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
-        <text class='topCommentCount'>{{list[2].comment_count}}</text>
+        <text class='topCommentCount'>{{list[2].like_count}}</text>
       </view>
       </view>
     </view>
@@ -54,7 +54,7 @@
     </view>
       <view>
         <image src='../../images/heart.png' style='width:20rpx; height:20rpx;'></image>
-        <text class='zanCount'>{{item.comment_count}}</text>
+        <text class='zanCount'>{{item.like_count}}</text>
       </view>
       
     </view>
@@ -75,7 +75,7 @@
       <view class='topNickName'>{{list[1].nickname}}</view>
       <view class='topCount'>
         <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
-        <text class='topCommentCount'>{{list[1].comment_count}}</text>
+        <text class='topCommentCount'>{{list[1].follower_count}}</text>
       </view>
       </view>
       <view class='firstBozhu' bindtap='gotoZozhuDetail' data-id="{{list[0].id}}">
@@ -87,7 +87,7 @@
       <view class='topNickName'>{{list[0].nickname}}</view>
       <view class='topCount'>
         <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
-        <text class='topCommentCount'>{{list[0].comment_count}}</text>
+        <text class='topCommentCount'>{{list[0].follower_count}}</text>
       </view>
       </view>
       <view class='thirdBozhu' bindtap='gotoZozhuDetail' data-id="{{list[2].id}}">
@@ -99,7 +99,7 @@
       <view class='topNickName'>{{list[2].nickname}}</view>
       <view class='topCount'>
         <image src='../../images/heart.png' style='width:16rpx; height:16rpx;'></image>
-        <text class='topCommentCount'>{{list[2].comment_count}}</text>
+        <text class='topCommentCount'>{{list[2].follower_count}}</text>
       </view>
       </view>
     </view>
@@ -111,7 +111,7 @@
     </view>
       <view>
         <image src='../../images/heart.png' style='width:20rpx; height:20rpx;'></image>
-        <text class='zanCount'>{{item.comment_count}}</text>
+        <text class='zanCount'>{{item.follower_count}}</text>
       </view>
       
     </view>

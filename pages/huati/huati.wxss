@@ -1,6 +1,7 @@
 /* pages/huati/huati.wxss */
 .scrollStyle{
   display: flex;
+  display: -webkit-flex; /* Safari */
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
@@ -9,6 +10,7 @@
 }
 .listStyle1{
   margin: 10rpx 20rpx;
+  display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -45,6 +47,7 @@
 .listTV{
   color: #fff;
   flex-grow: 2;
+  display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -52,6 +55,7 @@
   align-items: center;
 }
 .listEnd{
+  display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;

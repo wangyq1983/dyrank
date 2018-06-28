@@ -1,14 +1,35 @@
 const util = require('../../../utils/util.js');
 const app = getApp();
 
-Page({
-
+Page({ 
   /**
    * 页面的初始数据
    */
   data: {
     dataCon: {},
-    testVideo: ''
+    testVideo: '',    
+    yinyueStatus: 'play',     
+    src: ''
+  },
+    // 音乐播放
+  audioPlay: function () {
+    this.audioCtx.play()    
+    this.setData({
+      yinyueStatus: 'timeout'
+    });
+  },
+    // 音乐暂停
+  audioPause: function () {
+    this.audioCtx.pause()
+    this.setData({
+      yinyueStatus: 'play'
+    });
+  },
+    // 音乐结束
+  playEnd: function(){
+    this.setData({
+      yinyueStatus: 'play'
+    });
   },
 
   //详情渲染
@@ -73,7 +94,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    // 使用 wx.createAudioContext 获取 audio 上下文 context
+    this.audioCtx = wx.createAudioContext('myAudio')
   },
 
   /**

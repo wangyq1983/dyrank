@@ -1,5 +1,6 @@
 .bozhuBody{
   display: flex;
+  display: -webkit-flex; /* Safari */
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
@@ -25,6 +26,7 @@
   width: 95%;
   background: linear-gradient(#5D8BFF,#703ACE);
   border-radius: 10rpx;
+  display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -35,14 +37,25 @@
   margin-top: 120rpx;
   color: #50E3C2;
   font-size: 40rpx;
+  width: 80%;
+  text-align: center;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .douyinId{
   margin-top: 20rpx;
   color: #fff;
   font-size: 30rpx;
+  text-align: center;
+  width: 80%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .labels{
   width: 100%;
+  display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -59,6 +72,7 @@
 }
 .countInfos{
   width: 100%;
+  display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -69,6 +83,7 @@
   padding-bottom: 50rpx;
 }
 .infoStatistics{
+  display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -83,6 +98,7 @@
   margin: 50rpx 0;
 }
 .shipinLayout{
+  display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -93,6 +109,7 @@
   width: 30%;
   height: 300rpx;
   margin: 1.4%;
+  display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;

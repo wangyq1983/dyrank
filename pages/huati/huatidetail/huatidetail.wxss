@@ -2,18 +2,21 @@
 .huatibody{
   background-color: #1E2033;
   display: flex;
+  display: -webkit-flex; /* Safari */
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
 }
 .huatitop{
+  display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
   padding-top: 80rpx;
+  width: 100%;
 }
 .jinghao{
   width: 120rpx;
@@ -23,6 +26,11 @@
 .topic_title{
   color: #fff;
   font-size: 40rpx;
+  width: 80%;
+  text-align: center;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .video_count{
   color: #B4B4B4;
@@ -35,6 +43,7 @@
   margin: 50rpx 0;
 }
 .shipinLayout{
+  display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -45,6 +54,7 @@
   width: 30%;
   height: 300rpx;
   margin: 1.4%;
+  display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
