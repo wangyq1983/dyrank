@@ -12,7 +12,7 @@
       <view class='diffAdd'>
         <image src='../../images/Shapex.png' class='shapex'></image>
         <text>{{item.classify_name}}</text>
-        <text class='diffWan'>1221W ></text>
+        <text class='diffWan'>{{item.video_count}} ></text>
       </view>
       <view class='shipinLayout'>      
         <view class='huatiShipin' wx:for="{{item.videoList}}" wx:key="{{index}}" style='background:url({{item.cover_url}});background-size:100% 100%'>      

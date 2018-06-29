@@ -33,7 +33,14 @@
         "text": "话题",
         "iconPath": "images/huati.png",
         "selectedIconPath": "images/huati_selected.png"
-      },{
+      },
+      {
+        "pagePath": "pages/diff/diff",
+        "text": "我们不一样",
+        "iconPath": "images/buyang.png",
+        "selectedIconPath": "images/buyang_selected.png"
+      },
+      {
         "pagePath": "pages/yinyue/yinyue",
         "text": "音乐",
         "iconPath": "images/yinyue.png",
@@ -44,12 +51,6 @@
         "text": "视频",
         "iconPath": "images/shipin.png",
         "selectedIconPath": "images/shipin_selected.png"
-      },
-      {
-        "pagePath": "pages/diff/diff",
-        "text": "我们不一样",
-        "iconPath": "images/buyang.png",
-        "selectedIconPath": "images/buyang_selected.png"
       }
     ],
     "color": "#7B7BCC",
