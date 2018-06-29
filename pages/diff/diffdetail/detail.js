@@ -16,7 +16,6 @@ Page({
     console.log(res);
     this.setData({
       dataCon: res,
-      testVideo: 'https://api.amemv.com/aweme/v1/play/?video_id=42c41824794a48c998c1f469fd89aa61&line=1&ratio=720p&watermark=0&media_type=4&vr_type=0&test_cdn=None&improve_bitrate=0'
     });
     wx.setNavigationBarTitle({
       title: res.special_comment
@@ -55,11 +54,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('detail');
     console.log(options);
     // var params = {
     //   id: options.id
     // };
-    var params = { "special_id" : 9, "classify_id" : 41 };
+    var params = { 
+      special_id: options.special_id, 
+      classify_id: options.classify_id
+      };
     util.doRequest(app.globalData.diffApi.detail, params, this.zanDetail, app.globalData.diffApi.detailType)
   },
 

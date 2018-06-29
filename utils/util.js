@@ -371,7 +371,8 @@ const doRequest = (url, params, callback, types) => {
       console.log(res.data);
       // console.log(base64_decode(res.data.data));
       wx.hideLoading();
-      callback(JSON.parse(base64_decode(res.data.data)));
+      //callback(JSON.parse(base64_decode(res.data.data)));
+      callback(res.data.data);
     },
     fail: (res) => {
       console.log(res)

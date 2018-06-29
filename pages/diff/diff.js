@@ -8,87 +8,76 @@ Page({
    */
   data: {
     sub_menu_cur: 0,
+    diffMenu:[],
     list: [],
     listFeature: [],
     dataStep: 20,
     isEnd: false,
-    urlApi: app.globalData.diffApi.dianzanApi,
-    apiType: app.globalData.diffApi.dianzanApiType
-  },
-
-  getUrlApi: function (id) {
-    var dataUrlList = [app.globalData.diffApi.dianzanApi,
-      app.globalData.diffApi.oneSpecialApi,
-      app.globalData.diffApi.detail]
-    return dataUrlList[id];
-  },
-
-  getApiType: function (id) {
-    var dataTypeList = [app.globalData.diffApi.dianzanApiType,
-      app.globalData.diffApi.oneSpecialApiType,
-      app.globalData.diffApi.detailType]
-    return dataTypeList[id];
+    menuApi: app.globalData.diffApi.menu,
+    menuType: app.globalData.diffApi.menuType,
+    oneSpecialApi: app.globalData.diffApi.oneSpecial,
+    oneSpecialType: app.globalData.diffApi.oneSpecialType
   },
 
   menuFunc: function (e) {
     console.log(e.target.dataset.id);
-    let getUrl = this.getUrlApi(e.target.dataset.id);
-    let getType = this.getApiType(e.target.dataset.id);
     this.setData({
       sub_menu_cur: e.target.dataset.id,
-      urlApi: getUrl,
-      apiType: getType,
       list: [],
       isEnd: false
     });
     let params = {
-      from: 1,
-      to: this.data.dataStep
+      // from: 1,
+      // to: this.data.dataStep
+      special_id: e.target.dataset.id
     }
-    util.doRequest(this.data.urlApi, params, this.zanList, this.data.apiType);
+    util.doRequest(this.data.oneSpecialApi, params, this.zanList, this.data.oneSpecialType);
   },
-
-  //点赞列表 
+ 
   zanList: function (res) {
-    console.log(this.data.list)
     console.log(res)
     this.setData({
-      list: this.data.list.concat(res)
+      list: res
     });
-    if (res == 0) {
-      this.setData({
-        isEnd: true
-      });
-    };
-    console.log(res[1])
+    // if (res == 0) {
+    //   this.setData({
+    //     isEnd: true
+    //   });
+    // };
   },
 
-  gotoZozhuDetail: function (e) {
-    console.log(e.currentTarget.dataset.id);
-    let id = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: "diffdetail/detail?id=" + id
-    })
+  initMenu: function(res){
+    console.log('initmenu');
+    console.log(res);
+    this.setData({
+      diffMenu:res,
+      sub_menu_cur:res[0].id
+    });
+    let params = {
+      // from: 1,
+      // to: this.data.dataStep
+      special_id: this.data.sub_menu_cur
+    }
+    util.doRequest(this.data.oneSpecialApi, params, this.zanList, this.data.oneSpecialType);
   },
 
-  testChart: function (e) {
-    wx.navigateTo({
-      url: '../bar/index',
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
 
   onLoad: function (options) {
-    console.log();
     let params = {
-      from: 1,
-      to: this.data.dataStep
     }
-    util.doRequest(this.data.urlApi, params, this.zanList, app.globalData.diffApi.dianzanApiType)
+    util.doRequest(this.data.menuApi, params, this.initMenu, app.globalData.diffApi.menuType)
   },
-
+  gotoDetail:function(e){
+    console.log(e.currentTarget.dataset);
+    let cid = e.currentTarget.dataset.cid;
+    let sid = e.currentTarget.dataset.sid;
+    wx.navigateTo({
+      url: "diffdetail/detail?special_id=" + sid +"&classify_id="+cid
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -128,13 +117,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    let params = {
-      from: this.data.list.length + 1,
-      to: this.data.list.length + this.data.dataStep
-    }
-    if (this.data.isEnd !== true) {
-      util.doRequest(this.data.urlApi, params, this.zanList)
-    }
+    // let params = {
+    //   from: this.data.list.length + 1,
+    //   to: this.data.list.length + this.data.dataStep
+    // }
+    // if (this.data.isEnd !== true) {
+    //   util.doRequest(this.data.urlApi, params, this.zanList)
+    // }
   },
 
   /**

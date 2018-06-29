@@ -1,38 +1,24 @@
 <view>
    <view class='sub_menu_box'>
-    <view wx:for="{{list}}" wx:key="{{index}}" class='sub_menu_item' bindtap='menuFunc'>{{list[index].special_title}}</view>    
+    <view wx:for="{{diffMenu}}" wx:key="{{index}}" class='sub_menu_item {{sub_menu_cur==diffMenu[index].id?"cur":""}}' bindtap='menuFunc' data-id='{{diffMenu[index].id}}'>
+      {{diffMenu[index].special_title}}
+    </view>    
   </view> 
 
-  <scroll-view class='scrollStyle' lower-threshold="50" wx:if="{{sub_menu_cur == 0}}">
-    <image src='{{list[0].special_banner}}' class='diffBanner'></image>
+  <scroll-view class='scrollStyle' lower-threshold="50">
+    <image src='{{list.special_banner}}' class='diffBanner'></image>
     
-    <view class='classification'>      
+    <view class='classification' wx:for="{{list.classifyList}}" wx:key="{{index}}" bindtap='gotoDetail' data-sid='{{item.special_id}}' data-cid='{{item.classify_id}}'>      
       <view class='diffAdd'>
         <image src='../../images/Shapex.png' class='shapex'></image>
-        <text>甜品店</text>
+        <text>{{item.classify_name}}</text>
         <text class='diffWan'>1221W ></text>
       </view>
       <view class='shipinLayout'>      
-        <view class='huatiShipin' style='background:url(../../images/timg.png);background-size:100% 100%'>      
-          <text class='shipinNum'>01</text>      
+        <view class='huatiShipin' wx:for="{{item.videoList}}" wx:key="{{index}}" style='background:url({{item.cover_url}});background-size:100% 100%'>      
+          <text class='shipinNum'>0{{index+1}}</text>      
           <view class='zanCount'>
-            <text>265w</text>
-            <image src='../../images/heart.png' class='huatiHeart'></image>
-          </view>      
-        </view>
-
-        <view class='huatiShipin' style='background:url(../../images/timg.png);background-size:100% 100%'>      
-          <text class='shipinNum'>01</text>      
-          <view class='zanCount'>
-            <text>265w</text>
-            <image src='../../images/heart.png' class='huatiHeart'></image>
-          </view>      
-        </view>
-
-        <view class='huatiShipin' style='background:url(../../images/timg.png);background-size:100% 100%'>      
-          <text class='shipinNum'>01</text>      
-          <view class='zanCount'>
-            <text>265w</text>
+            <text>{{item.video_like_count}}</text>
             <image src='../../images/heart.png' class='huatiHeart'></image>
           </view>      
         </view>

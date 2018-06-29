@@ -1,7 +1,7 @@
 //app.js
 //var webhost = 'http://api-dev.jiyoushe.cn/v2/';
-//var webhost = "http://192.168.101.226:8061/";
-var webhost = "http://192.168.100.251:8061/";
+var webhost = "http://192.168.101.226:8061/";
+//var webhost = "http://192.168.100.251:8061/";
 
 App({
   onLaunch: function () {
@@ -68,7 +68,8 @@ App({
       detail: webhost + "musicDetail",
       detailType: "music"
     },      
-    shipinApi: {dianzanApi: webhost + "video",
+    shipinApi: {
+      dianzanApi: webhost + "video",
       dianzanApiType: "vLike",
       pinglunApi: webhost + "video",
       pinglunApiType: "vComment",
@@ -76,10 +77,10 @@ App({
       biaoshengType: "vRise"
     },
     diffApi: {
-      dianzanApi: webhost + "special",
-      dianzanApiType: "title",
-      oneSpecialApi: "oneSpecial",
-      oneSpecialApiType: "feature",
+      menu: webhost + "special",
+      menuType: "title",
+      oneSpecial: webhost+"oneSpecial",
+      oneSpecialType: "feature",
       detail: webhost + "specialDetail",
       detailType: "special"
     },
