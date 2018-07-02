@@ -46,18 +46,7 @@
       </view>
       </view>
     </view>
-    <view wx:for="{{listOther}}" wx:key="{{index}}" class='listStyle1 zanL' bindtap='gotoZozhuDetail' data-id="{{item.id}}">
-    <view class='itemLeft'>
-      <text class='listNum'>{{index+4}}</text>
-      <image src='{{item.avatar_url}}' class='iconImg'></image>
-      <text class='listName'>{{item.nickname}}</text>
-    </view>
-      <view>
-        <image src='../../images/heart.png' style='width:20rpx; height:20rpx;'></image>
-        <text class='zanCount'>{{item.like_count}}</text>
-      </view>
-      
-    </view>
+    <com pdata="{{listOther}}" num="{{index}}"></com>
     <view wx:if="{{isEnd == true}}" class='listEnd'> 
       <view class='bottomLine'></view>
       <text class='bottomText'>我是有底线的</text>
