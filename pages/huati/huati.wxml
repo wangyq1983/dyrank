@@ -13,7 +13,9 @@
       <view class='listTV' wx:if="{{index >= 3}}"><image class='TV_img' src='../../images/TV_black.png'></image>{{item.video_count}}</view>
     </view>    
     <view wx:if="{{isEnd == true}}" class='listEnd'> 
-      已经到底了
+      <view class='bottomLine'></view>
+      <text class='bottomText'>我是有底线的</text>
+      <view class='bottomLine'></view>      
     </view>
   </scroll-view>
 
@@ -26,7 +28,9 @@
       <view class='listTV' wx:if="{{index >= 3}}"><image class='TV_img' src='../../images/TV_black.png'></image>{{item.rise_value}}</view>      
     </view>
     <view wx:if="{{isEnd == true}}" class='listEnd'> 
-      已经到底了
+      <view class='bottomLine'></view>
+      <text class='bottomText'>我是有底线的</text>
+      <view class='bottomLine'></view>      
     </view>
   </scroll-view>
 </view>

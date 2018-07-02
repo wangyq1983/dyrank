@@ -315,3 +315,24 @@
   position:relative;
   margin-left: 8rpx;
 }
+.listEnd{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  margin: 100rpx 0;
+  font-size: 30rpx;
+}
+.bottomLine{
+  height: 30rpx;
+  border-bottom: 1rpx solid #979797;
+  flex: auto;
+}
+.bottomText{
+  padding: 0 15rpx;
+  height: 30rpx;
+  line-height: 55rpx;
+  color: #63638C;
+}

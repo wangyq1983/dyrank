@@ -54,16 +54,6 @@
   justify-content: flex-end;
   align-items: center;
 }
-.listEnd{
-  display: -webkit-flex; /* Safari */
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-content: center;
-  color: #fff;
-  margin: 100rpx 0;
-}
 .listStyle1:nth-child(1){
   background: linear-gradient(#FFA12F,#FF623B);
 }
