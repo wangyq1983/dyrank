@@ -1,9 +1,8 @@
 //app.js
 //var webhost = 'http://api-dev.jiyoushe.cn/v2/';
-// var webhost = "http://192.168.101.226:8061/";
+//var webhost = "http://192.168.101.226:8061/";
 //var webhost = "http://192.168.100.251:8061/";
-var webhost = "https://douyin-verify.haimacloud.com/";
-
+var webhost = "https://douyin-verify.haimacloud.com/"
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -40,24 +39,24 @@ App({
   },
   globalData: {
     userInfo: null,
-    version:'1.0',
-    zhuboApi:{
-      dianzanApi: webhost +"anchor",
-      dianzanApiType:"aLike",
-      fensi: webhost +"anchor",
-      fensiType:"aFans",
+    version: '1.0',
+    zhuboApi: {
+      dianzanApi: webhost + "anchor",
+      dianzanApiType: "aLike",
+      fensi: webhost + "anchor",
+      fensiType: "aFans",
       pinglun: webhost + "anchor",
-      pinglunType:"aComment",
-      biaosheng: webhost +"anchorRise",
-      biaoshengType:"aRise",
+      pinglunType: "aComment",
+      biaosheng: webhost + "anchorRise",
+      biaoshengType: "aRise",
       detail: webhost + "anchorDetail",
-      detailType:"anchor"
+      detailType: "anchor"
     },
-    huatiApi:{
-      zuireApi: webhost +"topicHottest",
-      zuireApiType:"tHottest",
-      biaosheng: webhost +"topicRise",
-      biaoshengType:"tRise",
+    huatiApi: {
+      zuireApi: webhost + "topicHottest",
+      zuireApiType: "tHottest",
+      biaosheng: webhost + "topicRise",
+      biaoshengType: "tRise",
       detail: webhost + "topicDetail",
       detailType: "topic"
     },
@@ -68,7 +67,7 @@ App({
       biaoshengType: "mRise",
       detail: webhost + "musicDetail",
       detailType: "music"
-    },      
+    },
     shipinApi: {
       dianzanApi: webhost + "video",
       dianzanApiType: "vLike",
@@ -80,7 +79,7 @@ App({
     diffApi: {
       menu: webhost + "special",
       menuType: "title",
-      oneSpecial: webhost+"oneSpecial",
+      oneSpecial: webhost + "oneSpecial",
       oneSpecialType: "feature",
       detail: webhost + "specialDetail",
       detailType: "special"
