@@ -4,7 +4,7 @@
 }
 .shapex{
   width: 35rpx;
-  height: 38rpx;
+  height: 42rpx;
   margin-right: 20rpx; 
 }
 .classification{
@@ -23,12 +23,12 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
 }
 .diffWan{
   flex: auto;
   text-align: right;
-  font-size: 30rpx;
+  font-size: 24rpx;
 }
 .shipinLayout{
   display: -webkit-flex; /* Safari */
@@ -60,15 +60,18 @@
 }
 .zanCount{
   align-self: flex-start;
-  background-color: #13141F;
+  /* background-color: #13141F; */
+  background-color: rgba(19, 20, 31, 0.7);
   padding: 10rpx;
   margin-right: 15rpx;
   margin-top: 15rpx;
   border-radius: 10rpx;
   color: #50E3C2;
+  font-size: 20rpx;
 }
 .huatiHeart{
   width: 20rpx;
   height: 20rpx;
   margin-left: 12rpx;
+  margin-top: 2rpx;
 }

@@ -56,15 +56,18 @@
 }
 .zanCount{
   align-self: flex-start;
-  background-color: #13141F;
+  /* background-color: #13141F; */
+  background-color: rgba(19, 20, 31, 0.7);
   padding: 10rpx;
   margin-right: 15rpx;
   margin-top: 15rpx;
   border-radius: 10rpx;
   color: #50E3C2;
+  font-size: 20rpx;
 }
 .huatiHeart{
   width: 20rpx;
   height: 20rpx;
   margin-left: 12rpx;
+  margin-top: 2rpx;
 }
