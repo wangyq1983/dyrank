@@ -3,8 +3,8 @@
   height: 310rpx;
 }
 .shapex{
-  width: 35rpx;
-  height: 42rpx;
+  width: 30rpx;
+  height: 35rpx;
   margin-right: 20rpx; 
 }
 .classification{
@@ -24,6 +24,7 @@
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
+  font-size: 32rpx;
 }
 .diffWan{
   flex: auto;
