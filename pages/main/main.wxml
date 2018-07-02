@@ -58,8 +58,10 @@
       </view>
       
     </view>
-    <view wx:if="{{isEnd == true}}"> 
-      已经到底了
+    <view wx:if="{{isEnd == true}}" class='listEnd'> 
+      <view class='bottomLine'></view>
+      <text class='bottomText'>我是有底线的</text>
+      <view class='bottomLine'></view>      
     </view>
   </scroll-view>
 
@@ -115,8 +117,10 @@
       </view>
       
     </view>
-    <view wx:if="{{isEnd == true}}"> 
-      已经到底了
+    <view wx:if="{{isEnd == true}}" class='listEnd'> 
+      <view class='bottomLine'></view>
+      <text class='bottomText'>我是有底线的</text>
+      <view class='bottomLine'></view>      
     </view>
   </scroll-view>
 
@@ -172,8 +176,10 @@
       </view>
       
     </view>
-    <view wx:if="{{isEnd == true}}"> 
-      已经到底了
+    <view wx:if="{{isEnd == true}}" class='listEnd'> 
+      <view class='bottomLine'></view>
+      <text class='bottomText'>我是有底线的</text>
+      <view class='bottomLine'></view>      
     </view>
   </scroll-view>
 
@@ -256,8 +262,10 @@
       </view>
       
     </view>
-    <view wx:if="{{isEnd == true}}"> 
-      已经到底了
+    <view wx:if="{{isEnd == true}}" class='listEnd'> 
+      <view class='bottomLine'></view>
+      <text class='bottomText'>我是有底线的</text>
+      <view class='bottomLine'></view>      
     </view>
   </scroll-view>
 
