@@ -235,7 +235,7 @@ getApiType:function(id){
       to: this.data.list.length + this.data.dataStep
     }
     if (this.data.isEnd !== true){
-      util.doRequest(this.data.urlApi, params, this.zanList)
+      util.doRequest(this.data.urlApi, params, this.zanList, app.globalData.zhuboApi.dianzanApiType)
     }
   },
 

@@ -69,6 +69,14 @@ Page({
     util.doRequest(app.globalData.zhuboApi.detail, params, this.zanDetail, app.globalData.zhuboApi.detailType);
   },
 
+  gotoVideo:function(e){
+    console.log(e.currentTarget.dataset.vpath);
+    let vpath = e.currentTarget.dataset.vpath
+    wx.navigateTo({
+      url: "../../videoplay/v?vpath=" + encodeURIComponent(vpath)
+    })
+  },
+
   init_bar:function(){
     //初始化图表
     this.barComponent.init((canvas, width, height) => {

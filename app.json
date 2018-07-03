@@ -11,7 +11,8 @@
     "pages/main/bozhu/detail",
     "pages/bar/index",
     "pages/diff/diff",
-    "pages/diff/diffdetail/detail"
+    "pages/diff/diffdetail/detail",
+    "pages/videoplay/v"
   ],
   "window":{
     "backgroundTextStyle":"light",

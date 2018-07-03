@@ -32,13 +32,14 @@
   </view> -->
   <text class='video_hot'>播主最热视频</text>  
   <view class='shipinLayout'>
-    <view wx:for="{{dataCon.videoList}}" wx:key="{{index}}" class='huatiShipin' style='background:url({{item.cover_url}});background-size:100% 100%'>      
-      <text class='shipinNum' wx:if="{{index < 10}}">0{{index+1}}</text>
+    <view wx:for="{{dataCon.videoList}}" wx:key="{{index}}" class='huatiShipin' style='background:url({{item.cover_url}});background-size:100% 100%' data-vpath = "{{item.play_url}}" bindtap='gotoVideo'>      
+       <text class='shipinNum' wx:if="{{index < 10}}">0{{index+1}}</text>
       <text class='shipinNum' wx:if="{{index >= 10}}">{{index+1}}</text>
       <view class='zanCount'>
         <text>{{item.video_like_count}}</text>
         <image src='../../../images/heart.png' class='huatiHeart'></image>
-      </view>      
+      </view> 
+        <!-- <video src='{{item.play_url}}' controls style='width:100rpx; height:100rpx;'></video>  -->
     </view>
   </view>
   <!-- <view>
