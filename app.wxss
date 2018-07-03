@@ -52,7 +52,7 @@
 }
 .sub_menu_item.cur{
   color: #fff;
-  border-bottom: 3px solid #00DDDC;
+  border-bottom: 4px solid #00DDDC;
   border-radius: 3rpx;
 }
 .scrollStyle{
