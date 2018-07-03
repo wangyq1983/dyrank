@@ -1,0 +1,11 @@
+<view wx:for="{{pdata}}" wx:key="{{num}}" class='listStyle1 zanL' data-id="{{item.id}}" bindtap='gotoZozhuDetail'>
+    <view class='itemLeft'>
+      <text class='listNum'>{{index+4}}</text>
+      <image src='{{item.avatar_url}}' class='iconImg'></image>
+      <text class='listName'>{{item.nickname}}</text>
+    </view>
+    <view>
+      <image src='../../images/heart.png' style='width:20rpx; height:20rpx;'></image>
+      <text class='zanCount'>{{item.like_count}}</text>
+    </view>
+</view> 
