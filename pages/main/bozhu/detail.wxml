@@ -4,9 +4,9 @@
     <text class='bozhuName'>{{dataCon.nickname}}</text>
     <text class='douyinId'>抖音ID：{{dataCon.signatrue}}</text>
     <view class='labels'>
-      <text class='bozhuLabel'>{{dataCon.age}}</text>
-      <text class='bozhuLabel'>{{dataCon.geography}}</text>
-      <text class='bozhuLabel'>{{dataCon.constellation}}</text>
+      <text class='bozhuLabel' wx:if="{{dataCon.age !== ''}}">{{dataCon.age}}</text>
+      <text class='bozhuLabel' wx:if="{{dataCon.geography !== ''}}">{{dataCon.geography}}</text>
+      <text class='bozhuLabel' wx:if="{{dataCon.constellation !== ''}}">{{dataCon.constellation}}</text>
     </view>
     <view class='countInfos'>
       <view class='infoStatistics'>
