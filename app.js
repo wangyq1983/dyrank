@@ -1,12 +1,7 @@
 //app.js
 //var webhost = 'http://api-dev.jiyoushe.cn/v2/';
-<<<<<<< HEAD
-// var webhost = "http://192.168.101.226:8061/";
-=======
-var webhost = "http://192.168.101.226:8061/";
->>>>>>> 78293d5bbbecbbf71fac31ad653c2b56a75049cb
 //var webhost = "http://192.168.100.251:8061/";
-//var webhost = "https://douyin-verify.haimacloud.com/"
+var webhost = "https://douyin-verify.haimacloud.com/"
 App({
   onLaunch: function () {
     // 展示本地存储能力
